@@ -1,28 +1,27 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    html {
+        font-size: 16px;
+    }
 }
 
 body {
-  margin-bottom: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 .navbar {
-    background-color: #333;
+    background-color: transparent;
     overflow: hidden;
 }
 
@@ -50,12 +49,46 @@ body {
         padding: 14px 20px;
     }
 
-    .navbar-nav .nav-link {
-        color: #fff;
-        text-decoration: none;
-        display: block;
+@font-face {
+    font-family: 'NavbarFont';
+    src: url('/Assets/Fonts/Montserrat-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.nav-link {
+    font-family: 'NavbarFont', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+    .nav-link:hover {
+        color: gray;
     }
 
-        .navbar-nav .nav-link:hover {
-            background-color: #575757;
-        }
+.nav-item.active .nav-link {
+    color: black;
+}
+
+.navbar-header .navbar-brand img {
+    width: 150px; /* Adjust this value to your desired width */
+    height: auto; /* Maintains the aspect ratio */
+}
+
+.section {
+    height: 100vh; /* Adjust this to your desired height */
+    background-size: cover;
+    background-position: center;
+}
+
+.section1 {
+    background-image: url('/Assets/Landing/Img/DM_Top_Background.png'); /* Replace with your image path */
+}
+
+.section2 {
+    background-image: url('/Assets/Landing/Img/DM_AboutUs_Bg.png'); /* Replace with your image path */
+}
+
+.section3 {
+    background-image: url('/Assets/Landing/Img/DM_Visit_Background.png'); /* Replace with your image path */
+}
