@@ -1,8 +1,34 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = null;
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title HERE"] - My ASP.NET Application</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">My Website</a>
+                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Accommodation" asp-action="Accommodation">Accommodation</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Boating" asp-action="Boating">Boating</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Boating" asp-action="Boating">Boating</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Marketing" asp-action="Marketing">Marketing</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Destination" asp-action="Destination">Destination</a></li>
+                    <a class="nav-link" asp-controller="Login" asp-action="Login">
+                        <img src="~/Assets/Landing/Icon/loginIcon.svg" alt="Login" class="nav-icon" />
+                    </a>
+            </div>
+        </nav>
+    </header>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+</body>
+</html>
