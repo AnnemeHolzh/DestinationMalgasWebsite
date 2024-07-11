@@ -2,8 +2,6 @@ html {
     font-size: 14px;
 }
 
-
-
 body {
     margin: 0;
     padding: 0;
@@ -34,7 +32,6 @@ header {
         align-items: center;
     }
 
-
 .navbar-nav {
     list-style-type: none;
     margin: 0;
@@ -46,13 +43,11 @@ header {
         padding: 4.5vw 3vw; /* Example values, adjust as needed */
     }
 
-
 @font-face {
     font-family: 'NavbarFont';
     src: url('/Assets/Fonts/Montserrat-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    
 }
 
 .nav-link {
@@ -77,12 +72,21 @@ header {
 
 .section {
     height: 100vh; /* Adjust this to your desired height */
+    width: auto;
     background-size: cover;
     background-position: center;
+    display: flex;
+    position: relative;
+}
+
+
+.slide-container {
+    padding-left:40px;
+    padding-top:175px;
 }
 
 .section1 {
-    background-image: url('/Assets/Landing/Img/DM_Top_Background.png'); /* Replace with your image path */
+    background-image: url('/Assets/Landing/Img/DM_Offer_Bg.png'); /* Replace with your image path */
 }
 
 .section2 {
@@ -93,4 +97,48 @@ header {
     background-image: url('/Assets/Landing/Img/DM_Visit_Background.png'); /* Replace with your image path */
 }
 
+.circle-button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    position: absolute; /* Allows you to place the buttons at specific positions */
+}
 
+.left-button {
+    left: 690px; /* Adjust to your desired positioning */
+    bottom: 30px;
+}
+
+.right-button {
+    right: 690px; /* Adjust to your desired positioning */
+    bottom: 30px;
+}
+
+.circle-button img {
+    width: 50px;
+    height: 50px;
+}
+
+
+#slide-svg {
+    width: 75%;
+    height: auto;
+}
+
+@font-face {
+    font-family: 'TopDescription';
+    src: url('/Assets/Fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.slide-description {
+    font-family: 'TopDescription', sans-serif; /* Replace with your desired font family */
+    font-size: 35px; /* Adjust the font size */
+    color: white; /* Set the color */
+    margin-top: 20px; /* Adjust spacing between the image and the text */
+    word-wrap: break-word; /* Ensure text wraps within the container */
+    text-align: left; /* Center align the text */
+    line-height: 120%;
+}

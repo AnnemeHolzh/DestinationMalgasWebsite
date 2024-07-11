@@ -1,10 +1,11 @@
 ﻿@{
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>@ViewData["Destination Malgas"] - My ASP.NET Application</title>
+    <title>@ViewData["Title"] - My ASP.NET Application</title>
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
@@ -30,7 +31,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Login" asp-action="Login" style="display: flex; align-items: center;">
-                            <img src="~/Assets/Landing/Icon/loginIcon.svg" alt="Login" class="nav-icon height: 10px; width: 10px;"  />
+                            <img src="~/Assets/Landing/Icon/loginIcon.svg" alt="Login" class="nav-icon height: 10px; width: 10px;" />
                         </a>
                     </li>
                 </ul>
@@ -40,8 +41,21 @@
 
     <main>
         <section class="section section1">
-            <!-- Content for the first section -->
+            <button class="circle-button left-button" onclick="changeSlide('prev')">
+                <img src="~/Assets/Landing/Buttons/leftCircleButton.svg" alt="Left Button">
+            </button>
+
+            <button class="circle-button right-button" onclick="changeSlide('next')">
+                <img src="~/Assets/Landing/Buttons/rightCircleButton.svg" alt="Right Button">
+            </button>
+
+            <div class="slide-container">
+                <img id="slide-svg" src="~/Assets/Landing/TopText/DM_TopText_1.png" alt="Slide Text">
+                <p id="slide-description" class="slide-description">Welcome to Destination Malgas</p>
+            </div>
+            <script src="~/js/LandingSlideshowLogic.js"></script>
         </section>
+
         <section class="section section2">
             <!-- Content for the second section -->
         </section>
