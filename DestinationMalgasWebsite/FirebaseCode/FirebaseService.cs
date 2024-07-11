@@ -11,7 +11,7 @@ public class FirebaseService
 
     public FirebaseService()
     {
-        _firebaseClient = new FirebaseClient("https://your-database-name.firebaseio.com/");
+        _firebaseClient = new FirebaseClient("https://destinationmalgasdb-c1203-default-rtdb.firebaseio.com/");
     }
 
     public async Task AddUser(User user)
