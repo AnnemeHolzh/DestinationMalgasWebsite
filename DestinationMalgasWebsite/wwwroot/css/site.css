@@ -72,7 +72,7 @@ header {
 
 .section {
     height: 100vh; /* Adjust this to your desired height */
-    width: auto;
+    width:auto;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -107,12 +107,12 @@ header {
 
 .left-button {
     left: 690px; /* Adjust to your desired positioning */
-    bottom: 30px;
+    bottom: 40px;
 }
 
 .right-button {
     right: 690px; /* Adjust to your desired positioning */
-    bottom: 30px;
+    bottom: 40px;
 }
 
 .circle-button img {
@@ -122,7 +122,7 @@ header {
 
 
 #slide-svg {
-    width: 75%;
+    width: auto;
     height: auto;
 }
 
@@ -135,10 +135,48 @@ header {
 
 .slide-description {
     font-family: 'TopDescription', sans-serif; /* Replace with your desired font family */
-    font-size: 35px; /* Adjust the font size */
+    font-size: 25px; /* Adjust the font size */
     color: white; /* Set the color */
     margin-top: 20px; /* Adjust spacing between the image and the text */
     word-wrap: break-word; /* Ensure text wraps within the container */
     text-align: left; /* Center align the text */
-    line-height: 120%;
+    line-height: 150%;
+    width:500px;
 }
+
+#slide-no {
+    width: 100px; /* Adjust this value to your desired width */
+    height: auto; /* Maintains the aspect ratio */
+    position: absolute; /* Position the slide number relative to its container */
+    bottom: 30px; /* Adjust the positioning as needed */
+    right: 20px; /* Adjust the positioning as needed */
+}
+
+#slide-line {
+    width: 530px; /* Adjust this value to your desired width */
+    height: auto; /* Maintains the aspect ratio */
+    position: absolute; /* Position the slide number relative to its container */
+    bottom: 65px; /* Adjust the positioning as needed */
+    right: 140px; /* Adjust the positioning as needed */
+}
+
+.carousel-container {
+    width: calc(2.5 * (300px + 10px)); /* Change 300px to the width of your images */
+    overflow: hidden;
+    position: absolute; /* Adjust as needed */
+    right: 0; /* Adjust as needed */
+    bottom: 120px; /* Adjust as needed */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-image {
+    width: 300px; /* Set this to the actual width of your images */
+    margin-right: 10px; /* Adjust spacing as needed */
+    transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+    position: relative;
+}
+
