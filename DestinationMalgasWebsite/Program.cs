@@ -3,8 +3,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Initialize Firebase
-FirebaseConfig.Initialize();
 
 var app = builder.Build();
 
