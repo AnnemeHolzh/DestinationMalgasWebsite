@@ -72,7 +72,7 @@ header {
 
 .section {
     height: 100vh; /* Adjust this to your desired height */
-    width:auto;
+    width: auto;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -81,20 +81,12 @@ header {
 
 
 .slide-container {
-    padding-left:40px;
-    padding-top:175px;
+    padding-left: 40px;
+    padding-top: 175px;
 }
 
 .section1 {
     background-image: url('/Assets/Landing/Img/DM_Offer_Bg.png'); /* Replace with your image path */
-}
-
-.section2 {
-    background-image: url('/Assets/Landing/Img/DM_AboutUs_Bg.png'); /* Replace with your image path */
-}
-
-.section3 {
-    background-image: url('/Assets/Landing/Img/DM_Visit_Background.png'); /* Replace with your image path */
 }
 
 .circle-button {
@@ -120,6 +112,23 @@ header {
     height: 50px;
 }
 
+/* Left button hover and active states */
+.left-button:hover img {
+    transform: scale(1.1);
+}
+
+.left-button:active img {
+    transform: scale(1.2);
+}
+
+/* Right button hover and active states */
+.right-button:hover img {
+    transform: scale(1.1);
+}
+
+.right-button:active img {
+    transform: scale(1.2);
+}
 
 #slide-svg {
     width: auto;
@@ -135,13 +144,13 @@ header {
 
 .slide-description {
     font-family: 'TopDescription', sans-serif; /* Replace with your desired font family */
-    font-size: 25px; /* Adjust the font size */
+    font-size: 20px; /* Adjust the font size */
     color: white; /* Set the color */
     margin-top: 20px; /* Adjust spacing between the image and the text */
     word-wrap: break-word; /* Ensure text wraps within the container */
     text-align: left; /* Center align the text */
     line-height: 150%;
-    width:500px;
+    width: 500px;
 }
 
 #slide-no {
@@ -180,3 +189,152 @@ header {
     position: relative;
 }
 
+/* Contact Us Button Styles */
+.contact-button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    margin-top: 40px; /* Adjust as needed */
+    margin-left: 100px;
+}
+
+    .contact-button img {
+        width: 230px; /* Adjust as needed */
+        height: auto; /* Maintain aspect ratio */
+        transition: transform 0.3s ease;
+    }
+
+    /* Hover Effect */
+    .contact-button:hover img {
+        transform: scale(1.1);
+    }
+
+    /* Active/Selected Effect */
+    .contact-button:active img {
+        transform: scale(1.2);
+    }
+
+/* Updated About Us Section */
+.section2 {
+    background-image: url('/Assets/Landing/Img/DM_AboutUs_Bg.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 40px; /* Add padding if needed */
+}
+
+.aboutHeader img {
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    margin-bottom: 20px; /* Adjust spacing */
+}
+
+.aboutContent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+}
+
+#about-image {
+    width: 50%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Add spacing between image and text */
+    margin-top:30px;
+}
+
+#about-rectangle {
+    display: none; /* Hide the rectangle image if not needed */
+}
+
+.about-text {
+    max-width: 60%; /* Adjust as needed */
+    background: rgba(255, 255, 255, 0.25) !important; /* Add background to text for readability */
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 15px; /* Optional: Add rounded corners */
+    margin-top: 45px;
+}
+
+    .about-text h2 {
+        margin-bottom: 10px; /* Adjust spacing */
+        color: #fff; /* Adjust text color */
+        padding-top: 15px;
+        padding-left: 10px;
+        padding-right: 15px;
+        padding-bottom: 0px;
+        font-family: AboutUsHeading;
+        font-size:35px;
+    }
+
+    .about-text p {
+        line-height: 1.8; /* Adjust this value as needed */
+        color: #fff; /* Adjust text color */
+        padding: 10px;
+        font-family: AboutUsBody;
+        font-size: 16px;
+    }
+
+/* General button styles */
+.about-button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    margin-top: 40px; /* Adjust as needed */
+    margin-left: 150px; /* Adjust as needed */
+}
+
+    .about-button img {
+        width: 230px; /* Adjust as needed */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Hover Effect */
+    .about-button:hover img {
+        
+        transform: scale(1.1);
+    }
+
+    /* Active/Selected Effect */
+    .about-button:active img {
+        transform: scale(1.2);
+    }
+
+
+@font-face {
+    font-family: 'AboutUsHeading';
+    src: url('/Assets/Fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AboutUsBody';
+    src: url('/Assets/Fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.section3 {
+    background-image: url('/Assets/Landing/Img/DM_Visit_Background.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 40px; /* Add padding if needed */
+}
+
+.visitHeader img {
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    margin-bottom: 20px; /* Adjust spacing */
+}

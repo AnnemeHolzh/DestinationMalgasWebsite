@@ -40,7 +40,8 @@
     </header>
 
     <main>
-        <section class="section section1">
+        <section class="section section1" id="section1">
+
             <button class="circle-button left-button" onclick="changeSlide('prev')">
                 <img src="~/Assets/Landing/Buttons/leftCircleButton.svg" alt="Left Button">
             </button>
@@ -50,11 +51,18 @@
             </button>
 
             <div class="slide-container visible">
-                <img id="slide-svg" src="~/Assets/Landing/TopText/DM_TopText_1.png" alt="Slide Text">
-                <p id="slide-description" class="slide-description">Welcome to Destination Malgas</p>
+                <img id="slide-svg" src="~/Assets/Landing/TopText/DM_Slide1.png" alt="Slide Text">
+                <p id="slide-description" class="slide-description">Get to know us! We aim to provide a comprehensive service to ensure your stay is memorable.</p>
                 <img id="slide-no" src="~/Assets/Landing/TopText/Numbers/slide01.png" alt="Slide Number">
                 <img id="slide-line" src="~/Assets/Landing/Img/landingLine.png" alt="line" />
+
+                <button id="contactButton" class="contact-button">
+                    <img src="~/Assets/Landing/Buttons/contactUsButtonDefault.svg" alt="Contact Us">
+                </button>
+
             </div>
+
+
 
             <!-- Carousel Container -->
             <div class="carousel-container">
@@ -66,25 +74,66 @@
                     <img class="carousel-image" src="~/Assets/Landing/Img/Carousel/carousel_img5.png" alt="Image 5">
                     <img class="carousel-image" src="~/Assets/Landing/Img/Carousel/carousel_img6.png" alt="Image 6">
                     <img class="carousel-image" src="~/Assets/Landing/Img/Carousel/carousel_img7.png" alt="Image 7">
+                    <img class="carousel-image" src="~/Assets/Landing/Img/Carousel/carousel_img1.png" alt="Image 1">
+                    <img class="carousel-image" src="~/Assets/Landing/Img/Carousel/carousel_img2.png" alt="Image 2">
                 </div>
             </div>
 
-            
+            <script>
+                document.getElementById('contactButton').addEventListener('click', function() {
+                    window.location.href = '/Contact/ContactUs'; // Adjust this URL if needed
+                });
+            </script>
+
             <script src="~/js/LandingSlideshowLogic.js"></script>
         </section>
 
 
-
         <section class="section section2">
-            <!-- Content for the second section -->
+            <div class="aboutHeader">
+                <img src="~/Assets/Landing/Img/aboutUsHeader.png" alt="About Us Header" />
+            </div>
+            <div class="aboutContent">
+                <img id="about-image" src="~/Assets/Landing/Img/aboutUsImage.png" alt="About Us Image" />
+                <div class="about-text">
+                    <h2>Get to know us!</h2>
+                    <p>
+                        Our mission is to provide a comprehensive umbrella of services designed to enhance your experience, whether you’re here for boating, accommodation, business, tourism, or events.<br>
+                        Explore the best of Malgas with us and discover everything this charming destination has to offer.
+                    </p>
+
+                    <button class="about-button" id="ourServicesButton">
+                        <img src="~/Assets/Landing/Buttons/ourservicesButtonDefault.svg" alt="Our Services">
+                    </button>
+
+                </div>
+            </div>
         </section>
+
         <section class="section section3">
-            <!-- Content for the third section -->
+            <div class="visitHeader">
+                <img src="~/Assets/Landing/Img/visitMalgasHeader.png" alt="Visit Us Header" />
+            </div>
+
+            <button class="circle-button left-button" onclick="changeSlide('prev')">
+                <img src="~/Assets/Landing/Buttons/leftCircleButton.svg" alt="Left Button">
+            </button>
+
+            <button class="circle-button right-button" onclick="changeSlide('next')">
+                <img src="~/Assets/Landing/Buttons/rightCircleButton.svg" alt="Right Button">
+            </button>
         </section>
+
     </main>
 
     <footer>
         <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
     </footer>
+
+    <script>
+        document.getElementById('ourServicesButton').addEventListener('click', function() {
+            document.getElementById('section1').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
