@@ -24,7 +24,9 @@
                     <li class="nav-item"><a class="nav-link" asp-controller="Marketing" asp-action="Marketing">MARKETING</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Destination" asp-action="Destination">DESTINATION</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Contact" asp-action="ContactUs">CONTACT US</a></li>
-                    <li class="nav-item">
+
+                        <!-- 
+                        <li class="nav-item">
                         <a class="nav-link" asp-controller="Login" asp-action="Login" style="display: flex; align-items: center;">
                             <img src="~/Assets/Landing/Icon/searchIcon.svg" alt="Search" class="nav-icon height: 10px; width: 10px;" />
                         </a>
@@ -34,21 +36,24 @@
                             <img src="~/Assets/Landing/Icon/loginIcon.svg" alt="Login" class="nav-icon height: 10px; width: 10px;" />
                         </a>
                     </li>
+                         -->
                 </ul>
             </div>
         </nav>
     </header>
 
     <main>
+    
         <section class="section section1" id="section1">
-
-            <button class="circle-button left-button" onclick="changeSlide('prev')">
+                <div class="button-container">
+            <button id="left-button-section1" class="circle-button left-button" onclick="changeSlide('prev')">
                 <img src="~/Assets/Landing/Buttons/leftCircleButton.svg" alt="Left Button">
             </button>
 
-            <button class="circle-button right-button" onclick="changeSlide('next')">
+            <button id="right-button-section1" class="circle-button right-button" onclick="changeSlide('next')">
                 <img src="~/Assets/Landing/Buttons/rightCircleButton.svg" alt="Right Button">
             </button>
+                </div>
 
             <div class="slide-container visible">
                 <img id="slide-svg" src="~/Assets/Landing/TopText/DM_Slide1.png" alt="Slide Text">
@@ -115,15 +120,34 @@
                 <img src="~/Assets/Landing/Img/visitMalgasHeader.png" alt="Visit Us Header" />
             </div>
 
-            <button class="circle-button left-button" onclick="changeSlide('prev')">
+            <div class="aboutContent">
+                <div class="text-container">
+                    <div id="small-text" class="small-text">Malgas is more than just a place to stay—it's a destination filled with natural beauty and a variety of activities:</div>
+                    <div id="reason-text" class="reason-text">
+                        <h2 id="reason-h2">1. Stunning Scenery</h2>
+                        <p id="reason-body">
+                            Immerse yourself in the breathtaking landscapes that surround you. <br><br>
+                            From lush riverbanks to rolling hills, every view is a postcard moment.
+                        </p>
+                    </div>
+                </div>
+                <img id="reason-image" src="~/Assets/Landing/Img/VisitCarousel/reasons1.png" alt="About Us Image" />
+            </div>
+
+            <button id="left-button-section3" class="circle-button left-button" onclick="changeReasonSlide('prev')">
                 <img src="~/Assets/Landing/Buttons/leftCircleButton.svg" alt="Left Button">
             </button>
 
-            <button class="circle-button right-button" onclick="changeSlide('next')">
+            <button id="right-button-section3" class="circle-button right-button" onclick="changeReasonSlide('next')">
                 <img src="~/Assets/Landing/Buttons/rightCircleButton.svg" alt="Right Button">
             </button>
         </section>
 
+
+
+
+
+        
     </main>
 
     <footer>

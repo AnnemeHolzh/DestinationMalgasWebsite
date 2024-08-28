@@ -1,5 +1,5 @@
 html {
-    font-size: 14px;
+    font-size: 16px; /* Base font size for scaling */
 }
 
 body {
@@ -79,7 +79,6 @@ header {
     position: relative;
 }
 
-
 .slide-container {
     padding-left: 40px;
     padding-top: 175px;
@@ -87,6 +86,15 @@ header {
 
 .section1 {
     background-image: url('/Assets/Landing/Img/DM_Offer_Bg.png'); /* Replace with your image path */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Full width of the container */
+    position: absolute;
+    bottom: 40px; /* Adjust this as needed */
+    padding: 0 20px; /* Add horizontal padding to keep buttons away from edges */
 }
 
 .circle-button {
@@ -143,12 +151,12 @@ header {
 }
 
 .slide-description {
-    font-family: 'TopDescription', sans-serif; /* Replace with your desired font family */
-    font-size: 20px; /* Adjust the font size */
-    color: white; /* Set the color */
-    margin-top: 20px; /* Adjust spacing between the image and the text */
-    word-wrap: break-word; /* Ensure text wraps within the container */
-    text-align: left; /* Center align the text */
+    font-family: 'TopDescription', sans-serif;
+    font-size: 1.25rem; /* 20px */
+    color: white;
+    margin-top: 20px;
+    word-wrap: break-word;
+    text-align: left;
     line-height: 150%;
     width: 500px;
 }
@@ -246,7 +254,7 @@ header {
     width: 50%; /* Adjust as needed */
     height: auto; /* Maintain aspect ratio */
     margin-right: 20px; /* Add spacing between image and text */
-    margin-top:30px;
+    margin-top: 30px;
 }
 
 #about-rectangle {
@@ -269,7 +277,7 @@ header {
         padding-right: 15px;
         padding-bottom: 0px;
         font-family: AboutUsHeading;
-        font-size:35px;
+        font-size: 2.2rem; /* 35px */
     }
 
     .about-text p {
@@ -277,7 +285,7 @@ header {
         color: #fff; /* Adjust text color */
         padding: 10px;
         font-family: AboutUsBody;
-        font-size: 16px;
+        font-size: 1rem; /* 16px */
     }
 
 /* General button styles */
@@ -298,7 +306,6 @@ header {
 
     /* Hover Effect */
     .about-button:hover img {
-        
         transform: scale(1.1);
     }
 
@@ -306,7 +313,6 @@ header {
     .about-button:active img {
         transform: scale(1.2);
     }
-
 
 @font-face {
     font-family: 'AboutUsHeading';
@@ -337,4 +343,242 @@ header {
     width: 100%;
     max-width: 1200px; /* Adjust as needed */
     margin-bottom: 20px; /* Adjust spacing */
+}
+
+.visitContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto; /* Center align */
+}
+
+.visit-text {
+    background: rgba(255, 255, 255, 0.25) !important; /* Add background to text for readability */
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 15px; /* Optional: Add rounded corners */
+    text-align: center;
+}
+
+    .visit-text h2 {
+        margin-bottom: 10px; /* Adjust spacing */
+        color: #fff; /* Adjust text color */
+        font-family: AboutUsHeading;
+        font-size: 2rem; /* 32px */
+    }
+
+    .visit-text p {
+        line-height: 1.8; /* Adjust this value as needed */
+        color: #fff; /* Adjust text color */
+        padding: 10px;
+        font-family: AboutUsBody;
+        font-size: 1.25rem; /* 20px */
+    }
+
+.visit-button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    margin-top: 40px; /* Adjust as needed */
+}
+
+    .visit-button img {
+        width: 230px; /* Adjust as needed */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Hover Effect */
+    .visit-button:hover img {
+        transform: scale(1.1);
+    }
+
+    /* Active/Selected Effect */
+    .visit-button:active img {
+        transform: scale(1.2);
+    }
+
+/* Responsive Design */
+@media (min-width: 1920px) {
+    .navbar-brand {
+        font-size: 1.5em;
+    }
+
+    .nav-link {
+        font-size: 1rem; /* 16px */
+    }
+
+    .slide-description {
+        font-size: 1.25rem; /* 20px */
+    }
+
+    .about-text h2 {
+        font-size: 2.2rem; /* 35px */
+    }
+
+    .about-text p {
+        font-size: 1rem; /* 16px */
+    }
+
+    .reason-text h2 {
+        font-size: 2.2rem; /* 35px */
+    }
+
+    .reason-text p {
+        font-size: 1.25rem; /* 20px */
+    }
+}
+
+@media (max-width: 1919px) and (min-width: 1600px) {
+    .navbar-brand {
+        font-size: 1.4em;
+    }
+
+    .nav-link {
+        font-size: 0.95rem; /* 15.2px */
+    }
+
+    .slide-description {
+        font-size: 1.15rem; /* 18px */
+    }
+
+    .about-text h2 {
+        font-size: 2rem; /* 32px */
+    }
+
+    .about-text p {
+        font-size: 0.95rem; /* 15.2px */
+    }
+
+    .reason-text h2 {
+        font-size: 2rem; /* 32px */
+    }
+
+    .reason-text p {
+        font-size: 1.15rem; /* 18px */
+    }
+}
+
+@media (max-width: 1599px) and (min-width: 1300px) {
+    .navbar-brand {
+        font-size: 1.3em;
+    }
+
+    .nav-link {
+        font-size: 0.9rem; /* 14.4px */
+    }
+
+    .slide-description {
+        font-size: 1.1rem; /* 17.6px */
+    }
+
+    .about-text h2 {
+        font-size: 1.8rem; /* 28.8px */
+    }
+
+    .about-text p {
+        font-size: 0.9rem; /* 14.4px */
+    }
+
+    .reason-text h2 {
+        font-size: 1.8rem; /* 28.8px */
+    }
+
+    .reason-text p {
+        font-size: 1.1rem; /* 17.6px */
+    }
+}
+
+@media (max-width: 1299px) and (min-width: 1000px) {
+    .navbar-brand {
+        font-size: 1.2em;
+    }
+
+    .nav-link {
+        font-size: 0.85rem; /* 13.6px */
+    }
+
+    .slide-description {
+        font-size: 1rem; /* 16px */
+    }
+
+    .about-text h2 {
+        font-size: 1.6rem; /* 25.6px */
+    }
+
+    .about-text p {
+        font-size: 0.85rem; /* 13.6px */
+    }
+
+    .reason-text h2 {
+        font-size: 1.6rem; /* 25.6px */
+    }
+
+    .reason-text p {
+        font-size: 1rem; /* 16px */
+    }
+}
+
+@media (max-width: 999px) and (min-width: 700px) {
+    .navbar-brand {
+        font-size: 1.1em;
+    }
+
+    .nav-link {
+        font-size: 0.8rem; /* 12.8px */
+    }
+
+    .slide-description {
+        font-size: 0.9rem; /* 14.4px */
+    }
+
+    .about-text h2 {
+        font-size: 1.4rem; /* 22.4px */
+    }
+
+    .about-text p {
+        font-size: 0.8rem; /* 12.8px */
+    }
+
+    .reason-text h2 {
+        font-size: 1.4rem; /* 22.4px */
+    }
+
+    .reason-text p {
+        font-size: 0.9rem; /* 14.4px */
+    }
+}
+
+@media (max-width: 699px) {
+    .navbar-brand {
+        font-size: 1em;
+    }
+
+    .nav-link {
+        font-size: 0.75rem; /* 12px */
+    }
+
+    .slide-description {
+        font-size: 0.8rem; /* 12.8px */
+        width: 100%;
+    }
+
+    .about-text h2 {
+        font-size: 1.2rem; /* 19.2px */
+    }
+
+    .about-text p {
+        font-size: 0.75rem; /* 12px */
+    }
+
+    .reason-text h2 {
+        font-size: 1.2rem; /* 19.2px */
+    }
+
+    .reason-text p {
+        font-size: 0.8rem; /* 12.8px */
+    }
 }

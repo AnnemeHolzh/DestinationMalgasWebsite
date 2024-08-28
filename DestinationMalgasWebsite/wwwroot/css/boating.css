@@ -1,0 +1,91 @@
+﻿/* General Body and HTML Settings */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Grid Container */
+.grid-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    transition: all 0.5s ease; /* Smooth transition for grid container */
+}
+
+/* Grid Items (Columns) */
+.grid-item {
+    flex: 1 1 33.33%; /* Each column takes up one-third of the container */
+    transition: flex 0.5s ease; /* Smooth transition for column resizing */
+    position: relative;
+    overflow: hidden;
+}
+
+    /* Images within Grid Items */
+    .grid-item img:first-child {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure images cover the full area of each column */
+        transition: transform 0.5s ease; /* Smooth transition for scaling */
+    }
+
+    /* Full viewport scale effect with pushing columns */
+    .grid-item.scale {
+        flex: 1 1 80%; /* Make the hovered item expand to 80% of the container */
+        z-index: 10; /* Ensure the scaled item is above other items */
+    }
+
+    /* Heading Image Styling */
+    .grid-item img:nth-child(2) {
+        position: absolute;
+        bottom: 20%; /* Position the heading image 20% above the bottom of its column */
+        left: 50%; /* Center the heading image horizontally */
+        transform: translateX(-50%); /* Center alignment fix */
+        width: 50%; /* Set heading image to 50% of the column width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Scaling the column images while keeping the heading fixed */
+    .grid-item.scale img:first-child {
+        transform: scale(1); /* Slightly scale the column image */
+    }
+
+    /* Text below heading */
+    .grid-item .text {
+        position: absolute;
+        bottom: 10%; /* Adjust to position below the heading */
+        left: 50%;
+        transform: translateX(-50%); /* Center the text horizontally */
+        font-size: 2vw; /* Responsive font size based on viewport width */
+        transition: transform 0.5s ease, font-size 0.5s ease; /* Smooth transition for scaling */
+        z-index: 5; /* Keep it above the image */
+        color: white;
+        font-family: ColumnFont;
+        text-align: center;
+    }
+
+    /* Slight scaling effect on hover */
+    .grid-item.scale .text {
+        transform: translateX(-50%) scale(1.1); /* Slightly scale the text */
+        font-size: 2.2vw; /* Adjust font size on hover */
+    }
+
+/* Heading Image Styling */
+.heading-img {
+    position: absolute;
+    bottom: 20%; /* Position the heading PNG 20% above the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center the heading PNG horizontally */
+    width: 50%; /* Make the heading PNG take up 50% of the column's width */
+    height: auto; /* Maintain aspect ratio */
+    transition: none; /* Ensure heading PNG does not scale on hover */
+}
+
+@font-face {
+    font-family: 'ColumnFont';
+    src: url('/Assets/Fonts/Montserrat-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

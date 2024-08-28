@@ -1,4 +1,21 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function adjustScale() {
+    var container = document.getElementById('scaled-container');
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
 
-// Write your JavaScript code.
+    var scaleX = windowWidth / 1920;
+    var scaleY = windowHeight / 1080;
+
+    var scale = Math.min(scaleX, scaleY);
+
+    container.style.transform = 'scale(' + scale + ')';
+
+    // Set CSS variables for scaling other elements
+    document.documentElement.style.setProperty('--scale-factor', scale);
+}
+
+// Adjust the scale when the page loads
+window.onload = adjustScale;
+
+// Adjust the scale when the window is resized
+window.onresize = adjustScale;
