@@ -1,0 +1,106 @@
+﻿/* General Body and HTML Settings */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Layout Container */
+.grid-container {
+    display: flex;
+    position: relative; /* Ensure arrows are positioned relative to this container */
+    height: 100vh;
+    width: 100vw;
+    transition: all 0.5s ease;
+    align-items: center; /* Center the grid items vertically */
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Grid Items */
+.grid-item {
+    position: relative;
+    overflow: hidden;
+}
+
+    .grid-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+
+    .grid-item:hover img {
+        transform: scale(1.1);
+    }
+
+.text {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+}
+
+/* Navigation Arrows */
+.navigation-arrows {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Position the arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 48px; /* Adjust as needed */
+    color: white;
+    z-index: 100; /* Ensure they are on top of everything */
+    cursor: pointer;
+    pointer-events: auto; /* Allow the arrows to be clickable */
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.left-arrow {
+    left: 20px; /* Adjust to your liking */
+}
+
+.right-arrow {
+    right: 20px; /* Adjust to your liking */
+}
+
+.arrow:hover {
+    color: #f0f0f0; /* Lighter color on hover */
+}
+
+/* Adjust grid-container to accommodate the arrows */
+
+
+/* Rest of the CSS for grid-items, etc. remains unchanged */
+
+
+@font-face {
+    font-family: "arrow-font";
+    font-size: 60%;
+    src: url('/Assets/Fonts/PermanentMarker-Regular.ttf') format('truetype');
+}

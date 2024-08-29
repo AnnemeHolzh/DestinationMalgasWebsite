@@ -7,6 +7,7 @@
 <head>
     <title>@ViewData["Title"] - My ASP.NET Application</title>
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/home.css" />
 </head>
 <body>
     <header>
@@ -151,13 +152,56 @@
     </main>
 
     <footer>
-        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <div class="footer-column left">
+            <h3>Our Location</h3>
+            <p>
+                OFFICE & SHOP:<br>
+                PLOT 412, DIEPKLOOF, MALGAS, WC<br>
+                Tar Road Diepkloof<br>
+                Next to The Boathouse Pub & Pizza, Malgas, WC, 6740
+            </p>
+        </div>
+        <div class="footer-column center">
+            <img src="Assets/Logo/footer_logo.png" alt="Footer Logo" class="responsive-image" />
+        </div>
+
+
+        <div class="footer-column right">
+            <h3>Contact Us!</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <img src="~/Assets/Footer/Icon/emailIcon.svg" alt="Email Icon" class="contact-icon">
+                    <p>
+                        <a href="mailto:twan@destinationmalgas.co.za">twan@destinationmalgas.co.za</a><br>
+                        </p>
+                </div>
+                <div class="contact-item">
+                    <img src="~/Assets/Footer/Icon/phoneIcon.svg" alt="Phone Icon" class="contact-icon">
+                    <p>
+                        <a href="https://wa.me/27671629081" target="_blank">+27 (0) 671 629 081</a>
+                    </p>
+                </div>
+            </div>
+
+              <div class="icons-section">
+        <img src="~/Assets/Footer/Icon/facebookIcon.svg" alt="Facebook Icon" class="footer-icon">
+        <img src="~/Assets/Footer/Icon/instagramIcon.svg" alt="Instagram Icon" class="footer-icon">
+        <img src="~/Assets/Footer/Icon/linkedInIcon.svg" alt="LinkedIn Icon" class="footer-icon">
+        <img src="~/Assets/Footer/Icon/tiktokIcon.svg" alt="TikTok Icon" class="footer-icon">
+        <img src="~/Assets/Footer/Icon/youtubeIcon.svg" alt="YouTube Icon" class="footer-icon">
+    </div>
+
+        </div>
     </footer>
+
 
     <script>
         document.getElementById('ourServicesButton').addEventListener('click', function() {
             document.getElementById('section1').scrollIntoView({ behavior: 'smooth' });
         });
     </script>
+
+    <script src="~/js/site.js"></script>
+
 </body>
 </html>

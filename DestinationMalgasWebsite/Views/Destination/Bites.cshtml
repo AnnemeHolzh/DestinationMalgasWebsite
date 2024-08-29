@@ -21,9 +21,9 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Home" asp-action="Index">HOME</a></li>
                     <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Accommodation" asp-action="Accommodation">ACCOMMODATION</a></li>
-                    <li class="nav-item"><a class="nav-link" style="color: black;" asp-controller="Boating" asp-action="Boating">BOATING</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Boating" asp-action="Boating">BOATING</a></li>
                     <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Marketing" asp-action="Marketing">MARKETING</a></li>
-                    <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Destination" asp-action="Destination">DESTINATION</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color: black;" asp-controller="Destination" asp-action="Destination">DESTINATION</a></li>
                     <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Contact" asp-action="ContactUs">CONTACT US</a></li>
 
                     <!--
@@ -43,13 +43,31 @@
         </nav>
     </header>
     <main class="content-wrapper">
-        <h1 class="centered-heading">RENTALS</h1>
-        <img src="~/Assets/Boating/Rentals/rentals_line.jpg" alt="Description" class="image-below-heading">
+        <h1 class="centered-heading">BITES BEACH CAF&Eacute;</h1>
+        <img src="~/Assets/Destination/Subpages/Lines/blueLine.jpg" alt="Description" class="image-below-heading">
         <div class="text-below-image">
-            <p>Enjoy fishing, boating, swimming, floating and skiing. Picnicking on the water’s edge, watching the birds dart through the reeds and the river life gently cruising by with the slow days. Discover the bliss of the Breede River. Indemnity and compliance regulations apply, ensuring your safety and a hassle-free experience on the water. Let us help you make the most of your fishing adventure!</p>
+            <p>
+                Enjoy the beautiful views of the Atlantic Ocean while having a bite at the well-known Bites Beach Café.
+                <br>
+                Delight in watching the Southern Right whales from Bites Beach Café, one of the highest congregations along the Western Cape coastline, making the time between July to November truly special.
+                <br>
+                <br>
+                Reconnect with nature while being surrounded by the sound of crashing waves, walking barefoot on the sand, or exploring the fynbos.
+                <br>
+                Tick all three off your list when you visit <a href="@Url.Action("DeHoop", "Destination")" class="custom-link">De Hoop Nature Reserve</a>, making a stop for lunch at Bites Beach Café, of course.
+                <br>
+                <br>
+                Watching the tides come in and the waves crash on the shore is a mesmerizing experience.
+                Go for a walk on our pristine coastline and let nature envelop you in its serene beauty. Listen to the calls of the seabirds, feel the soft sand beneath your feet, and let the fresh ocean breeze rejuvenate your spirit.
+                <br>
+                <br>
+                With indoor and outdoor seating, Bites Beach Café is a place where time stands still and the natural world unfolds in its most splendid form.
+            </p>
         </div>
-        <img src="~/Assets/Boating/Rentals/rentalsImage.jpg" alt="Second Description" class="image-below-text">
-        </main>
+
+
+        <img src="~/Assets/Destination/Subpages/Bites/bitesInside.jpg" alt="Second Description" class="image-below-text">
+    </main>
     <footer>
         <div class="footer-column left">
             <h3>Our Location</h3>
@@ -92,7 +110,20 @@
 
         </div>
     </footer>
-        </body>
-        </html>
+</body>
+</html>
 
 <script src="~/js/site.js"></script>
+
+<style >
+.custom-link {
+        color: #316080;
+    text-decoration: none;
+}
+
+.custom-link:hover {
+    color: lightgrey;
+}
+
+</style >
+

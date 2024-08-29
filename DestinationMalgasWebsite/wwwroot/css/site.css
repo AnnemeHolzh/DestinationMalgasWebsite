@@ -8,10 +8,18 @@ body {
 }
 
 header {
-    position: absolute;
+    position: fixed; /* Fix the navbar at the top of the page */
     top: 0;
+    left: 0;
     width: 100%;
-    z-index: 10;
+    background-color: transparent; /* Semi-transparent background if needed */
+    padding: 10px 0; /* Adjust padding as needed */
+    transition: transform 0.3s ease; /* Smooth transition for hiding/showing */
+    z-index: 1000; /* High value to ensure it stays on top of other elements */
+}
+
+.header-hidden {
+    transform: translateY(-100%); /* Move the navbar out of view */
 }
 
 .navbar-header .navbar-brand {
@@ -43,12 +51,6 @@ header {
         padding: 4.5vw 3vw; /* Example values, adjust as needed */
     }
 
-@font-face {
-    font-family: 'NavbarFont';
-    src: url('/Assets/Fonts/Montserrat-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 .nav-link {
     font-family: 'NavbarFont', sans-serif;
@@ -70,515 +72,180 @@ header {
     height: auto; /* Maintains the aspect ratio */
 }
 
-.section {
-    height: 100vh; /* Adjust this to your desired height */
-    width: auto;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    position: relative;
-}
-
-.slide-container {
-    padding-left: 40px;
-    padding-top: 175px;
-}
-
-.section1 {
-    background-image: url('/Assets/Landing/Img/DM_Offer_Bg.png'); /* Replace with your image path */
-}
-
-.button-container {
+footer {
+    height: 376px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    width: 100%; /* Full width of the container */
-    position: absolute;
-    bottom: 40px; /* Adjust this as needed */
-    padding: 0 20px; /* Add horizontal padding to keep buttons away from edges */
+    background-color: #202020; /* Adjust this color as needed */
+    padding: 20px; /* Adjust padding if needed */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-.circle-button {
-    border: none;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-    position: absolute; /* Allows you to place the buttons at specific positions */
+.footer-column {
+    flex: 1; /* Each column takes up equal space */
+    padding: 0 10px; /* Adjust horizontal padding as needed */
+    box-sizing: border-box; /* Include padding in the element's total width */
 }
 
-.left-button {
-    left: 690px; /* Adjust to your desired positioning */
-    bottom: 40px;
-}
-
-.right-button {
-    right: 690px; /* Adjust to your desired positioning */
-    bottom: 40px;
-}
-
-.circle-button img {
-    width: 50px;
-    height: 50px;
-}
-
-/* Left button hover and active states */
-.left-button:hover img {
-    transform: scale(1.1);
-}
-
-.left-button:active img {
-    transform: scale(1.2);
-}
-
-/* Right button hover and active states */
-.right-button:hover img {
-    transform: scale(1.1);
-}
-
-.right-button:active img {
-    transform: scale(1.2);
-}
-
-#slide-svg {
-    width: auto;
-    height: auto;
-}
-
-@font-face {
-    font-family: 'TopDescription';
-    src: url('/Assets/Fonts/Montserrat-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.slide-description {
-    font-family: 'TopDescription', sans-serif;
-    font-size: 1.25rem; /* 20px */
-    color: white;
-    margin-top: 20px;
-    word-wrap: break-word;
-    text-align: left;
-    line-height: 150%;
-    width: 500px;
-}
-
-#slide-no {
-    width: 100px; /* Adjust this value to your desired width */
-    height: auto; /* Maintains the aspect ratio */
-    position: absolute; /* Position the slide number relative to its container */
-    bottom: 30px; /* Adjust the positioning as needed */
-    right: 20px; /* Adjust the positioning as needed */
-}
-
-#slide-line {
-    width: 530px; /* Adjust this value to your desired width */
-    height: auto; /* Maintains the aspect ratio */
-    position: absolute; /* Position the slide number relative to its container */
-    bottom: 65px; /* Adjust the positioning as needed */
-    right: 140px; /* Adjust the positioning as needed */
-}
-
-.carousel-container {
-    width: calc(2.5 * (300px + 10px)); /* Change 300px to the width of your images */
-    overflow: hidden;
-    position: absolute; /* Adjust as needed */
-    right: 0; /* Adjust as needed */
-    bottom: 120px; /* Adjust as needed */
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-image {
-    width: 300px; /* Set this to the actual width of your images */
-    margin-right: 10px; /* Adjust spacing as needed */
-    transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
-    position: relative;
-}
-
-/* Contact Us Button Styles */
-.contact-button {
-    border: none;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-    display: block;
-    margin-top: 40px; /* Adjust as needed */
-    margin-left: 100px;
-}
-
-    .contact-button img {
-        width: 230px; /* Adjust as needed */
-        height: auto; /* Maintain aspect ratio */
-        transition: transform 0.3s ease;
+    .footer-column.left {
+        text-align: left; /* Align text to the left */
     }
 
-    /* Hover Effect */
-    .contact-button:hover img {
-        transform: scale(1.1);
+    .footer-column.right {
+        text-align: right; /* Align text to the right */
     }
 
-    /* Active/Selected Effect */
-    .contact-button:active img {
-        transform: scale(1.2);
+    .footer-column h3 {
+        font-family: 'FooterHeading';
+        color: white;
+        font-size: 1.5rem; /* Adjust as needed */
     }
 
-/* Updated About Us Section */
-.section2 {
-    background-image: url('/Assets/Landing/Img/DM_AboutUs_Bg.png'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    padding: 40px; /* Add padding if needed */
-}
+    .footer-column p {
+        font-family: 'FooterBody';
+        color: white;
+        font-size: 1rem; /* Adjust as needed */
+        line-height:200%;
+        margin-top: 1vh%;
+    }
 
-.aboutHeader img {
-    width: 100%;
-    max-width: 1200px; /* Adjust as needed */
-    margin-bottom: 20px; /* Adjust spacing */
-}
+    .footer-column.left h3 {
+        margin-top: 10vh;
+    }
 
-.aboutContent {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    width: 100%;
-    max-width: 1200px; /* Adjust as needed */
-}
+    .footer-column.right h3 {
+        margin-top: 10vh;
+    }
 
-#about-image {
-    width: 50%; /* Adjust as needed */
+    .footer-column.left p {
+        margin-top: 1vh;
+    }
+
+    .footer-column.right p {
+        margin-top: 1vh;
+    }
+
+.responsive-image {
+    max-width: 100%; /* Ensure the image does not exceed the container's width */
     height: auto; /* Maintain aspect ratio */
-    margin-right: 20px; /* Add spacing between image and text */
-    margin-top: 30px;
 }
 
-#about-rectangle {
-    display: none; /* Hide the rectangle image if not needed */
-}
-
-.about-text {
-    max-width: 60%; /* Adjust as needed */
-    background: rgba(255, 255, 255, 0.25) !important; /* Add background to text for readability */
-    padding: 20px; /* Add padding for spacing */
-    border-radius: 15px; /* Optional: Add rounded corners */
-    margin-top: 45px;
-}
-
-    .about-text h2 {
-        margin-bottom: 10px; /* Adjust spacing */
-        color: #fff; /* Adjust text color */
-        padding-top: 15px;
-        padding-left: 10px;
-        padding-right: 15px;
-        padding-bottom: 0px;
-        font-family: AboutUsHeading;
-        font-size: 2.2rem; /* 35px */
+/* Responsive Font Sizes */
+@media (max-width: 1200px) {
+    .footer-column.left h3, .footer-column.right h3 {
+        font-size: 1.3rem;
     }
 
-    .about-text p {
-        line-height: 1.8; /* Adjust this value as needed */
-        color: #fff; /* Adjust text color */
-        padding: 10px;
-        font-family: AboutUsBody;
-        font-size: 1rem; /* 16px */
+    .footer-column.left p, .footer-column.right p {
+        font-size: 0.9rem;
     }
-
-/* General button styles */
-.about-button {
-    border: none;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-    display: block;
-    margin-top: 40px; /* Adjust as needed */
-    margin-left: 150px; /* Adjust as needed */
 }
 
-    .about-button img {
-        width: 230px; /* Adjust as needed */
-        height: auto; /* Maintain aspect ratio */
+@media (max-width: 992px) {
+    .footer-column.left h3, .footer-column.right h3 {
+        font-size: 1.2rem;
     }
 
-    /* Hover Effect */
-    .about-button:hover img {
-        transform: scale(1.1);
+    .footer-column.left p, .footer-column.right p {
+        font-size: 0.8rem;
     }
-
-    /* Active/Selected Effect */
-    .about-button:active img {
-        transform: scale(1.2);
-    }
-
-@font-face {
-    font-family: 'AboutUsHeading';
-    src: url('/Assets/Fonts/Montserrat-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
 
-@font-face {
-    font-family: 'AboutUsBody';
-    src: url('/Assets/Fonts/Montserrat-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+@media (max-width: 768px) {
+    .footer-column.left h3, .footer-column.right h3 {
+        font-size: 1rem;
+    }
+
+    .footer-column.left p, .footer-column.right p {
+        font-size: 0.7rem;
+    }
 }
 
-.section3 {
-    background-image: url('/Assets/Landing/Img/DM_Visit_Background.png'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
+    @font-face {
+        font-family: 'NavbarFont';
+        src: url('/Assets/Fonts/Montserrat-Medium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+
+    @font-face {
+        font-family: 'FooterHeading';
+        src: url('/Assets/Fonts/Montserrat-Bold.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+
+    @font-face {
+        font-family: 'FooterBody';
+        src: url('/Assets/Fonts/Montserrat-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+.contact-info {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    padding: 40px; /* Add padding if needed */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-end; /* Align items to the end of the flex container (right side) */
+    gap: 10px; /* Space between items */
 }
 
-.visitHeader img {
-    width: 100%;
-    max-width: 1200px; /* Adjust as needed */
-    margin-bottom: 20px; /* Adjust spacing */
-}
-
-.visitContent {
+.contact-item {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 1200px; /* Adjust as needed */
-    margin: 0 auto; /* Center align */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Space between image and text */
+    flex-direction: row-reverse; /* Reverse the order so the icon appears to the right */
 }
 
-.visit-text {
-    background: rgba(255, 255, 255, 0.25) !important; /* Add background to text for readability */
-    padding: 20px; /* Add padding for spacing */
-    border-radius: 15px; /* Optional: Add rounded corners */
-    text-align: center;
+    .contact-item p {
+        margin: 0; /* Remove default margins */
+        font-size: 1em; /* Adjust text size as needed */
+        line-height: 1.5; /* Improve vertical alignment */
+    }
+
+.contact-item p {
+    margin: 0; /* Remove default margins */
+    font-size: 1em; /* Adjust text size as needed */
 }
 
-    .visit-text h2 {
-        margin-bottom: 10px; /* Adjust spacing */
-        color: #fff; /* Adjust text color */
-        font-family: AboutUsHeading;
-        font-size: 2rem; /* 32px */
-    }
-
-    .visit-text p {
-        line-height: 1.8; /* Adjust this value as needed */
-        color: #fff; /* Adjust text color */
-        padding: 10px;
-        font-family: AboutUsBody;
-        font-size: 1.25rem; /* 20px */
-    }
-
-.visit-button {
-    border: none;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-    display: block;
-    margin-top: 40px; /* Adjust as needed */
+/* Style for email and phone links */
+p a {
+    color: white; /* Set the text color to white */
+    text-decoration: none; /* Remove underline from links */
 }
 
-    .visit-button img {
-        width: 230px; /* Adjust as needed */
-        height: auto; /* Maintain aspect ratio */
+    p a:hover {
+        color: lightgray; /* Optional: Change color on hover */
+        text-decoration: underline; /* Optional: Add underline on hover */
     }
 
-    /* Hover Effect */
-    .visit-button:hover img {
-        transform: scale(1.1);
+
+/* Make icons responsive */
+@media (max-width: 768px) {
+    .contact-icon {
+        width: 20px; /* Smaller icon size on smaller screens */
     }
 
-    /* Active/Selected Effect */
-    .visit-button:active img {
-        transform: scale(1.2);
-    }
-
-/* Responsive Design */
-@media (min-width: 1920px) {
-    .navbar-brand {
-        font-size: 1.5em;
-    }
-
-    .nav-link {
-        font-size: 1rem; /* 16px */
-    }
-
-    .slide-description {
-        font-size: 1.25rem; /* 20px */
-    }
-
-    .about-text h2 {
-        font-size: 2.2rem; /* 35px */
-    }
-
-    .about-text p {
-        font-size: 1rem; /* 16px */
-    }
-
-    .reason-text h2 {
-        font-size: 2.2rem; /* 35px */
-    }
-
-    .reason-text p {
-        font-size: 1.25rem; /* 20px */
+    .contact-item p {
+        font-size: 0.9em; /* Smaller text size on smaller screens */
     }
 }
 
-@media (max-width: 1919px) and (min-width: 1600px) {
-    .navbar-brand {
-        font-size: 1.4em;
-    }
 
-    .nav-link {
-        font-size: 0.95rem; /* 15.2px */
-    }
-
-    .slide-description {
-        font-size: 1.15rem; /* 18px */
-    }
-
-    .about-text h2 {
-        font-size: 2rem; /* 32px */
-    }
-
-    .about-text p {
-        font-size: 0.95rem; /* 15.2px */
-    }
-
-    .reason-text h2 {
-        font-size: 2rem; /* 32px */
-    }
-
-    .reason-text p {
-        font-size: 1.15rem; /* 18px */
-    }
+.footer-icon {
+    width: 24px; /* Set a default size for the icons */
+    height: 24px; /* Set a default size for the icons */
+    object-fit: contain; /* Ensure the icons fit within their container */
+    margin-top:5%;
+    margin-left:8%;
 }
 
-@media (max-width: 1599px) and (min-width: 1300px) {
-    .navbar-brand {
-        font-size: 1.3em;
-    }
-
-    .nav-link {
-        font-size: 0.9rem; /* 14.4px */
-    }
-
-    .slide-description {
-        font-size: 1.1rem; /* 17.6px */
-    }
-
-    .about-text h2 {
-        font-size: 1.8rem; /* 28.8px */
-    }
-
-    .about-text p {
-        font-size: 0.9rem; /* 14.4px */
-    }
-
-    .reason-text h2 {
-        font-size: 1.8rem; /* 28.8px */
-    }
-
-    .reason-text p {
-        font-size: 1.1rem; /* 17.6px */
-    }
-}
-
-@media (max-width: 1299px) and (min-width: 1000px) {
-    .navbar-brand {
-        font-size: 1.2em;
-    }
-
-    .nav-link {
-        font-size: 0.85rem; /* 13.6px */
-    }
-
-    .slide-description {
-        font-size: 1rem; /* 16px */
-    }
-
-    .about-text h2 {
-        font-size: 1.6rem; /* 25.6px */
-    }
-
-    .about-text p {
-        font-size: 0.85rem; /* 13.6px */
-    }
-
-    .reason-text h2 {
-        font-size: 1.6rem; /* 25.6px */
-    }
-
-    .reason-text p {
-        font-size: 1rem; /* 16px */
-    }
-}
-
-@media (max-width: 999px) and (min-width: 700px) {
-    .navbar-brand {
-        font-size: 1.1em;
-    }
-
-    .nav-link {
-        font-size: 0.8rem; /* 12.8px */
-    }
-
-    .slide-description {
-        font-size: 0.9rem; /* 14.4px */
-    }
-
-    .about-text h2 {
-        font-size: 1.4rem; /* 22.4px */
-    }
-
-    .about-text p {
-        font-size: 0.8rem; /* 12.8px */
-    }
-
-    .reason-text h2 {
-        font-size: 1.4rem; /* 22.4px */
-    }
-
-    .reason-text p {
-        font-size: 0.9rem; /* 14.4px */
-    }
-}
-
-@media (max-width: 699px) {
-    .navbar-brand {
-        font-size: 1em;
-    }
-
-    .nav-link {
-        font-size: 0.75rem; /* 12px */
-    }
-
-    .slide-description {
-        font-size: 0.8rem; /* 12.8px */
-        width: 100%;
-    }
-
-    .about-text h2 {
-        font-size: 1.2rem; /* 19.2px */
-    }
-
-    .about-text p {
-        font-size: 0.75rem; /* 12px */
-    }
-
-    .reason-text h2 {
-        font-size: 1.2rem; /* 19.2px */
-    }
-
-    .reason-text p {
-        font-size: 0.8rem; /* 12.8px */
+/* Responsive icon size */
+@media (max-width: 768px) {
+    .footer-icon {
+        width: 20px; /* Smaller icon size on smaller screens */
+        height: 20px; /* Maintain aspect ratio */
     }
 }
