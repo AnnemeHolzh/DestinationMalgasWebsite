@@ -15,5 +15,20 @@ namespace DestinationMalgasWebsite.Controllers
         {
             return View();
         }
+
+        public IActionResult Charters()
+        {
+            return View();
+        }
+
+        public IActionResult Rentals()
+        {
+            return View();
+        }
+
+        public IActionResult BaitAndTackle()
+        {
+            return View();
+        }
     }
 }

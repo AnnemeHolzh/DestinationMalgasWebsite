@@ -1,0 +1,111 @@
+﻿/* Ensure the body and html take up the full viewport height */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+    box-sizing: border-box; /* Ensure padding is included in element's width/height */
+}
+
+/* Flexbox Layout */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    flex-shrink: 0; /* Prevent the header from shrinking */
+}
+
+main.content-wrapper {
+    flex-grow: 1; /* Allow the main content to grow and take available space */
+    padding-bottom: 5vh; /* Add space at the bottom for margin */
+}
+
+footer {
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+}
+
+/* Adjust the heading with respect to the viewport height */
+.centered-heading {
+    margin-top: 21.03vh; /* Responsive margin */
+    text-align: center;
+    font-size: calc(1.5vw + 16px); /* Responsive font size with a base */
+    font-family: PageHeading;
+}
+
+/* Limit heading font size for larger screens */
+@media (min-width: 750px) {
+    .centered-heading {
+        font-size: calc(1.2vw + 16px); /* Adjust scaling for larger screens */
+    }
+}
+
+@media (min-width: 1920px) {
+    .centered-heading {
+        font-size: 48px; /* Maximum font size for very large screens */
+    }
+}
+
+/* Center the image and adjust its margin */
+.image-below-heading {
+    margin-top: 4.79vh; /* Responsive margin */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%; /* Width as a percentage of viewport width */
+    max-width: 768px; /* Maximum width */
+}
+
+/* Center the text and adjust its margin */
+.text-below-image {
+    margin-top: 5.87vh; /* Responsive margin */
+    text-align: center;
+    font-family: PageBody;
+    font-size: calc(1vw + 10px); /* Responsive font size with a base */
+    color: black;
+    width: 60%; /* Width as a percentage of viewport width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Limit body text font size for larger screens */
+@media (min-width: 750px) {
+    .text-below-image {
+        font-size: calc(1vw + 5px); /* Adjust scaling for larger screens */
+    }
+}
+
+@media (min-width: 1920px) {
+    .text-below-image {
+        font-size: 1vw; /* Maximum font size for very large screens */
+    }
+}
+
+/* Image below the text */
+.image-below-text {
+    margin-top: 4.79vh; /* Responsive margin */
+    margin-bottom: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; /* Width as a percentage of viewport width */
+}
+
+
+@font-face {
+    font-family: 'PageHeading';
+    src: url('/Assets/Fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PageBody';
+    src: url('/Assets/Fonts/Montserrat-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
