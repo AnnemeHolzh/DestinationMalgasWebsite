@@ -36,3 +36,41 @@ window.addEventListener('scroll', () => {
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
 });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.sidebar');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    let isSidebarOpen = false;
+
+    function toggleSidebar() {
+        if (isSidebarOpen) {
+        sidebar.classList.remove('sidebar-active');
+    isSidebarOpen = false;
+        } else {
+        sidebar.classList.add('sidebar-active');
+    isSidebarOpen = true;
+        }
+    }
+
+    function closeSidebarOnClickOutside(event) {
+        if (isSidebarOpen && !sidebar.contains(event.target) && !navbarToggler.contains(event.target)) {
+        sidebar.classList.remove('sidebar-active');
+    isSidebarOpen = false;
+        }
+    }
+
+    // Open/close sidebar on hamburger icon click
+    navbarToggler.addEventListener('click', toggleSidebar);
+
+    // Close sidebar if clicking outside of it
+    document.addEventListener('click', closeSidebarOnClickOutside);
+
+    // Close sidebar if pressing the "Escape" key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && isSidebarOpen) {
+        sidebar.classList.remove('sidebar-active');
+    isSidebarOpen = false;
+        }
+    });
+});
+
