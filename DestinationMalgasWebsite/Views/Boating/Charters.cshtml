@@ -1,47 +1,15 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>@ViewData["Title"] - My ASP.NET Application</title>
     <link rel="stylesheet" href="~/css/boating_sub.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" style="display: flex; align-items: center;">
-                        <img src="~/Assets/Logo/logoBlackTransparent.svg" alt="Destination Malgas Logo" />
-                    </a>
-                </div>
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Home" asp-action="Index">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Accommodation" asp-action="Accommodation">ACCOMMODATION</a></li>
-                    <li class="nav-item"><a class="nav-link" style="color: black;" asp-controller="Boating" asp-action="Boating">BOATING</a></li>
-                    <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Marketing" asp-action="Marketing">MARKETING</a></li>
-                    <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Destination" asp-action="Destination">DESTINATION</a></li>
-                    <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Contact" asp-action="ContactUs">CONTACT US</a></li>
-
-                    <!--
-                        <li class="nav-item">
-                        <a class="nav-link" asp-controller="Login" asp-action="Login" style="display: flex; align-items: center;">
-                            <img src="~/Assets/Landing/Icon/searchIcon.svg" alt="Search" class="nav-icon height: 10px; width: 10px;" />
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Login" asp-action="Login" style="display: flex; align-items: center;">
-                            <img src="~/Assets/Landing/Icon/loginIcon.svg" alt="Login" class="nav-icon height: 10px; width: 10px;" />
-                        </a>
-                    </li>
-                         -->
-                </ul>
-            </div>
-        </nav>
-    </header>
+   
     <main class="content-wrapper">
         <h1 class="centered-heading">CHARTERS</h1>
         <img src="~/Assets/Boating/Charters/charterLine.jpg" alt="Description" class="image-below-heading">
@@ -56,51 +24,7 @@
         </div>
         <img src="~/Assets/Boating/Charters/charterSub.jpg" alt="Second Description" class="image-below-text">
     </main>
-    <footer>
-        <div class="footer-column left">
-            <h3>Our Location</h3>
-            <p>
-                OFFICE & SHOP:<br>
-                PLOT 412, DIEPKLOOF, MALGAS, WC<br>
-                Tar Road Diepkloof<br>
-                Next to The Boathouse Pub & Pizza, Malgas, WC, 6740
-            </p>
-        </div>
-        <div class="footer-column center">
-            <img src="~/Assets/Logo/footer_logo.png" alt="Footer Logo" class="responsive-image" />
-        </div>
-
-
-        <div class="footer-column right">
-            <h3>Contact Us!</h3>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <img src="~/Assets/Footer/Icon/emailIcon.svg" alt="Email Icon" class="contact-icon">
-                    <p>
-                        <a href="mailto:twan@destinationmalgas.co.za">twan@destinationmalgas.co.za</a><br>
-                    </p>
-                </div>
-                <div class="contact-item">
-                    <img src="~/Assets/Footer/Icon/phoneIcon.svg" alt="Phone Icon" class="contact-icon">
-                    <p>
-                        <a href="https://wa.me/27671629081" target="_blank">+27 (0) 671 629 081</a>
-                    </p>
-                </div>
-            </div>
-
-            <div class="icons-section">
-                <img src="~/Assets/Footer/Icon/facebookIcon.svg" alt="Facebook Icon" class="footer-icon">
-                <img src="~/Assets/Footer/Icon/instagramIcon.svg" alt="Instagram Icon" class="footer-icon">
-                <img src="~/Assets/Footer/Icon/linkedInIcon.svg" alt="LinkedIn Icon" class="footer-icon">
-                <img src="~/Assets/Footer/Icon/tiktokIcon.svg" alt="TikTok Icon" class="footer-icon">
-                <img src="~/Assets/Footer/Icon/youtubeIcon.svg" alt="YouTube Icon" class="footer-icon">
-            </div>
-
-        </div>
-    </footer>
-
+   
         <script src="~/js/site.js"></script>
-
-
 </body>
 </html>
