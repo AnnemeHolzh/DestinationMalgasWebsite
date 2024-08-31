@@ -52,15 +52,16 @@
                 Write a Message
              </div>
 
-        <textarea class="messageInput row1 left" placeholder="Full Name"></textarea>
-        <textarea class="messageInput row1 right" placeholder="Email"></textarea>
-        <textarea class="messageInput row2 left" placeholder="Phone Number"></textarea>
-        <textarea class="messageInput row2 right" placeholder="Subject"></textarea>
-        <textarea class="bigMessageInput" placeholder="Message"></textarea>
-
-        <div class="sendButton">
-            <img class="sendButtonImage" />
-        </div>
+        <form method="post" asp-action="SendEmail" asp-controller="Contact">
+            <input type="text" class="messageInput row1 left" name="name" placeholder="Full Name" required />
+            <input type="email" class="messageInput row1 right" name="email" placeholder="Email" required />
+            <input type="text" class="messageInput row2 left" name="phoneNumber" placeholder="Phone Number" />
+            <input type="text" class="messageInput row2 right" name="subject" placeholder="Subject" required />
+            <textarea class="bigMessageInput" name="message" placeholder="Message" required></textarea>
+            <div class="sendButton">
+                <button type="submit">Send</button>
+            </div>
+        </form>
 
         
     </main>
@@ -77,4 +78,12 @@
 
 </html>
 
+<!--<textarea class="messageInput row1 left" placeholder="Full Name"></textarea>
+        <textarea class="messageInput row1 right" placeholder="Email"></textarea>
+        <textarea class="messageInput row2 left" placeholder="Phone Number"></textarea>
+        <textarea class="messageInput row2 right" placeholder="Subject"></textarea>
+        <textarea class="bigMessageInput" placeholder="Message"></textarea>
 
+        <div class="sendButton">
+            <img class="sendButtonImage" />
+        </div>-->

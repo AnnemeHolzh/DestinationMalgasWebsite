@@ -8,19 +8,31 @@
         {
             private string senderEmail = "destinationmalgasdev1@gmail.com";
             private string senderPassword = "ruputpehevakhfmm";
-            private string recieverEmail = "jasspervanniekerk1111@gmail.com";//twan@destinationmalgas.co.za
+            private string recieverEmail = "jaspervanniekerk1111@gmail.com";//twan@destinationmalgas.co.za
 
 
-            public string subject { get; set; }
-            public string body { get; set; }
-            public string email { get; set; }
-            public string phoneNumber { get; set; }
-            public string name { get; set; }
+            public string subject { get; set; } = "";
+            public string body { get; set; } = "";
+            public string email { get; set; } = "";
+            public string phoneNumber { get; set; } = "";
+            public string name { get; set; } = "";
+
+            
 
             public void Sender()
             {
                 try
                 {
+
+                    string constructedBody = "Hi my name is " + this.name +
+                        "\r\n" +
+                        "\r\nPlease contact me from this Email: " + this.email +
+                        "\r\nOr this Phone number: " + this.phoneNumber + 
+                        "\r\n" + 
+                        "\r\n" + body;
+
+
+
                     SmtpMail oMail = new SmtpMail("TryIt");
 
                     // Your gmail email address
@@ -31,7 +43,7 @@
                     // Set email subject
                     oMail.Subject = subject;
                     // Set email body
-                    oMail.TextBody = body;
+                    oMail.TextBody = constructedBody;
 
                     // Gmail SMTP server address
                     SmtpServer oServer = new SmtpServer("smtp.gmail.com");
