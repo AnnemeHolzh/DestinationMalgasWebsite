@@ -22,8 +22,8 @@
                     <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Home" asp-action="Index">HOME</a></li>
                     <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Accommodation" asp-action="Accommodation">ACCOMMODATION</a></li>
                     <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Boating" asp-action="Boating">BOATING</a></li>
-                    <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Marketing" asp-action="Marketing">MARKETING</a></li>
-                    <li class="nav-item"><a class="nav-link" style="color: black;" asp-controller="Destination" asp-action="Destination">DESTINATION</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color: black;" asp-controller="Marketing" asp-action="Marketing">MARKETING</a></li>
+                    <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Destination" asp-action="Destination">DESTINATION</a></li>
                     <li class="nav-item"><a class="nav-link" style="color: #D4D4D4;" asp-controller="Contact" asp-action="ContactUs">CONTACT US</a></li>
 
                     <!--
@@ -43,22 +43,25 @@
         </nav>
     </header>
     <main class="content-wrapper">
-        <h1 class="centered-heading">THE FIG TREE</h1>
-        <img src="~/Assets/Destination/Subpages/Lines/orangeLine.jpg" alt="Description" class="image-below-heading">
+        <h1 class="centered-heading">WEBSITE</h1>
+        <img src="~/Assets/Destination/SubPages/Lines/blueLine.jpg" alt="Description" class="image-below-heading">
         <div class="text-below-image">
             <p>
-                Situated in the main Opstal area, the building that used to be a shed that was used by the farmer and later by the maintenance team of De Hoop Collection, has been renovated to a beautiful space with stunning views of the De Hoop Vlei. 
-                <br>
-                The silo behind ‘The Shed’ was cleverly transformed into ‘William’s Wine Cellar’, a round shaped space that is home to more than 3000 wines where you are invited to select a cultivar of your choice.
+                Website marketing on our platform is designed to help local businesses connect with their community and beyond. 
                 <br><br>
-                <a href="https://www.dehoopcollection.com/restaurant/" class="custom-link">The Fig Tree Wine Restaurant</a> offers a la carte menus for breakfast and lunch and set dinner menus. Delicious picnic baskets can be pre-ordered from reception and enjoyed on the beach, under a fig tree, or next to the reserve’s 19km vlei.
+                By utilizing our website, you can promote your products, increase brand awareness, and drive more traffic to your business. 
+                <br>
+                Our marketing solutions are tailored to ensure a higher conversion rate and customer satisfaction through targeted, cost-effective campaigns.
+                <br>
+                We offer a range of services that include retargeting customers, showcasing your brand, and increasing visibility through strategic placements on our site. 
+                <br><br>
+                To see examples of how we can help your business shine, visit our <a href="@Url.Action("Destination", "Destination")" class="custom-link">Destination</a>
+                    page, where you can explore successful campaigns and see the impact our website marketing can have.
+                    <br><br>
+                Partner with us to make your brand the go-to choice in your local area!
             </p>
         </div>
-
-
-        <img src="~/Assets/Destination/Subpages/FigTree/figTreeInterior.jpg" alt="Second Description" class="image-below-text">
-
-
+        <img src="~/Assets/Marketing/SubPages/webSub.jpg" alt="Second Description" class="image-below-text">
     </main>
     <footer>
         <div class="footer-column left">
@@ -102,20 +105,21 @@
 
         </div>
     </footer>
+
+    <script src="~/js/site.js"></script>
+
+
 </body>
 </html>
 
-<script src="~/js/site.js"></script>
-
 <style>
     .custom-link {
-        color: #D99D52;
+        color: #2F5D63;
         text-decoration: none;
     }
 
-    .custom-link:hover {
-        color: lightgrey;
-    }
+        .custom-link:hover {
+            color: lightgrey;
+        }
 
 </style>
-
