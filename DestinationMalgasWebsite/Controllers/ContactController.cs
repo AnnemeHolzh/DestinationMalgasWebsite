@@ -29,7 +29,7 @@ namespace DestinationMalgasWebsite.Controllers
                 body = message
             };
 
-            emailService.Sender();
+            emailService.CantactpageSender();
 
             return RedirectToAction("ContactUs");
         }
