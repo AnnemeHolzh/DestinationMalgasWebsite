@@ -1,4 +1,5 @@
 ﻿document.addEventListener('DOMContentLoaded', (event) => {
+    // Section 1 Slideshow
     const slides = [
         {
             svgImage: "/Assets/Landing/TopText/DM_Slide1.png",
@@ -96,12 +97,12 @@
         }, 500); // Match this duration to your CSS animation duration
     }
 
-    document.querySelector('.left-button').addEventListener('click', () => {
+    document.querySelector('.section1 .left-button').addEventListener('click', () => {
         changeSlide('prev');
         updateCarousel();
     });
-    
-    document.querySelector('.right-button').addEventListener('click', () => {
+
+    document.querySelector('.section1 .right-button').addEventListener('click', () => {
         changeSlide('next');
         updateCarousel();
     });
@@ -111,4 +112,60 @@
 
     // Continuously update carousel on window resize
     window.addEventListener('resize', updateCarousel);
+});
+
+// Section 3 Slideshow
+document.addEventListener('DOMContentLoaded', () => {
+    const reasons = [
+        {
+            h2: "1. Stunning Scenery",
+            body: "Explore numerous hiking trails that cater to all levels of fitness. <br><br>From lush riverbanks to rolling hills, every view is a postcard moment.",
+            image: "/Assets/Landing/Img/VisitCarousel/reasons1.png"
+        },
+        {
+            h2: "2. Hiking Trails",
+            body: "Discover the historical landmarks and learn about the cultural heritage of Malgas. <br><br>Discover the diverse flora and fauna, and perhaps spot some local wildlife.",
+            image: "/Assets/Landing/Img/VisitCarousel/reasons2.png"
+        },
+        {
+            h2: "3. Whale Watching",
+            body: "Visit during whale season to witness the magnificent spectacle of these gentle giants. <br><br>Infanta and Witsand are renowned for their whale watching opportunities.",
+            image: "/Assets/Landing/Img/VisitCarousel/reason3.png"
+        },
+        {
+            h2: "4. Fishing",
+            body: "The Breede River is teeming with fish like Cob and Garrick. <br><br>Whether you're a seasoned angler or a beginner, you'll find great spots for fishing.",
+            image: "/Assets/Landing/Img/VisitCarousel/reason4.png"
+        },
+        {
+            h2: "5. Bird Watching",
+            body: "With a rich variety of bird species, including fish eagles and kingfishers, Malgas is a haven for bird watchers.",
+            image: "/Assets/Landing/Img/VisitCarousel/reason5.png"
+        },
+        {
+            h2: "6. Local Attractions",
+            body: "Explore historical monuments, visit local pubs and restaurants, and tour nearby wineries.<br><br>There's always something new to discover.",
+            image: "/Assets/Landing/Img/VisitCarousel/reason6.png"
+        }
+    ];
+
+    let currentReason = 0;
+    const reasonH2Element = document.getElementById('reason-h2');
+    const reasonBodyElement = document.getElementById('reason-body');
+    const reasonImageElement = document.getElementById('reason-image');
+
+    function changeReasonSlide(direction) {
+        if (direction === 'next') {
+            currentReason = (currentReason + 1) % reasons.length;
+        } else if (direction === 'prev') {
+            currentReason = (currentReason - 1 + reasons.length) % reasons.length;
+        }
+
+        reasonH2Element.innerHTML = reasons[currentReason].h2;
+        reasonBodyElement.innerHTML = reasons[currentReason].body;
+        reasonImageElement.src = reasons[currentReason].image;
+    }
+
+    document.querySelector('.section3 .left-button').addEventListener('click', () => changeReasonSlide('prev'));
+    document.querySelector('.section3 .right-button').addEventListener('click', () => changeReasonSlide('next'));
 });

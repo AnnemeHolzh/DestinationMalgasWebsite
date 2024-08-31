@@ -1,5 +1,80 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/contactus.css" />
+
+</head>
+<body style="background: black">
+  
+    <main class="overall-wrapper">
+        
+      
+            <img src="~/Assets/Contact/headerImage.jpg" alt="Heading Image" class="responsive-heading-image" />
+        
+
+       
+            <img src="~/Assets/Contact/contactRect.svg"  alt="contact block" class="contact-block" />
+
+            <div class="contactUs-Heading">
+                Get in Touch
+            </div>
+
+            <div class="contactUs-Body">
+                Get in touch with us today – we're here to answer any questions 
+                <br>
+                and help you plan your perfect experience!
+            </div>
+
+            <img src="~/Assets/Contact/splitLine.jpg" alt="contact block" class="split-line" />
+
+            <img src="~/Assets/Contact/emailPhoneIcon.svg" alt="contact block" class="emailPhoneIcon" />
+
+            <div class="phoneNumber">
+                <a href="https://wa.me/27671629081" target="_blank">+27 (0) 671 629 081</a>
+            </div>
+
+            <div class="email">
+                <a href="mailto:twan@destinationmalgas.co.za">twan@destinationmalgas.co.za</a><br>
+            </div>
+
+            <a href="https://maps.app.goo.gl/nJ7LMJ7zM2PiVJT4A" target="_blank">
+                <img src="~/Assets/Contact/gmapsImage.jpg" alt="contact block" class="map-container" />
+            </a>
+
+            <img src="~/Assets/Contact/contactUsGreenHead.svg" alt="contact block" class="contactGreenHead" />
+
+            <div class="messageHeading">
+                Write a Message
+             </div>
+
+        <textarea class="messageInput row1 left" placeholder="Full Name"></textarea>
+        <textarea class="messageInput row1 right" placeholder="Email"></textarea>
+        <textarea class="messageInput row2 left" placeholder="Phone Number"></textarea>
+        <textarea class="messageInput row2 right" placeholder="Subject"></textarea>
+        <textarea class="bigMessageInput" placeholder="Message"></textarea>
+
+        <div class="sendButton">
+            <img class="sendButtonImage" />
+        </div>
+
+        
+    </main>
+
+
+
+  
+    <script src="~/js/site.js"></script>
+    <script src="~/js/ContactButtonLogic.js"></script>
+   
+
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model House
+
+<!-- House Name -->
+<h1>@Model.Name</h1>
+
+<!-- Sleeps and Price -->
+<p><strong>Sleeps:</strong> @Model.Sleeps</p>
+<p><strong>Price:</strong> $@Model.Price</p>
+
+<!-- Introduction -->
+<h3>Introduction</h3>
+<p>@Model.Introduction</p>
+
+<!-- Location and Surroundings -->
+<h3>Location & Surroundings</h3>
+<p>@Model.LocationSurroundings</p>
+
+<!-- Features and Layout -->
+<h3>Features & Layout</h3>
+<p>@Model.FeaturesLayout</p>
+
+<!-- Activities -->
+<h3>Activities</h3>
+<p>@Model.Activities</p>
+
+<!-- House Images -->
+<h3>Images</h3>
+<div>
+    @foreach (var imageUrl in Model.ImageUrls)
+    {
+        <img src="@imageUrl" alt="@Model.Name" style="max-width:100%; height:auto; margin-bottom:10px;" />
+    }
+</div>
+
+<!-- Amenities -->
+<h3>Amenities</h3>
+<ul>
+    @foreach (var amenity in Model.Amenities)
+    {
+        <li>
+            <img src="@amenity.IconUrl" alt="@amenity.Name" style="width:24px; height:24px; margin-right:5px;" />
+            @amenity.Name
+        </li>
+    }
+</ul>
+
+<!-- Room Configuration -->
+<h3>Room Configuration</h3>
+<ul>
+    @foreach (var room in Model.RoomConfig)
+    {
+        <li><strong>@room.Key:</strong> @room.Value</li>
+    }
+</ul>

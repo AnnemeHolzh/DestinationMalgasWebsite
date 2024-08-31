@@ -1,5 +1,37 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model List<House>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/contactus.css" />
+
+</head>
+<body>
+    <main>
+        @foreach (var house in Model)
+        {
+            <div class="house-summary">
+                <h2>@house.Name</h2>
+                <p>@house.Introduction</p>
+                <img src="@house.ImageUrls.FirstOrDefault()" alt="@house.Name" />
+                <a asp-action="AccommodationDetails" asp-route-id="@house.Id">View Details</a>
+            </div>
+        }
+
+    </main>
+
+    <script src="~/js/site.js"></script>
+    <script src="~/js/ContactButtonLogic.js"></script>
+
+
+
+</body>
+
+</html>
+
+
+

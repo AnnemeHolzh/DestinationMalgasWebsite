@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/boating_sub.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+  
+    <main class="content-wrapper">
+        <h1 class="centered-heading">WEBSITE</h1>
+        <img src="~/Assets/Destination/SubPages/Lines/blueLine.jpg" alt="Description" class="image-below-heading">
+        <div class="text-below-image">
+            <p>
+                Website marketing on our platform is designed to help local businesses connect with their community and beyond. 
+                <br><br>
+                By utilizing our website, you can promote your products, increase brand awareness, and drive more traffic to your business. 
+                <br>
+                Our marketing solutions are tailored to ensure a higher conversion rate and customer satisfaction through targeted, cost-effective campaigns.
+                <br>
+                We offer a range of services that include retargeting customers, showcasing your brand, and increasing visibility through strategic placements on our site. 
+                <br><br>
+                To see examples of how we can help your business shine, visit our <a href="@Url.Action("Destination", "Destination")" class="custom-link">Destination</a>
+                    page, where you can explore successful campaigns and see the impact our website marketing can have.
+                    <br><br>
+                Partner with us to make your brand the go-to choice in your local area!
+            </p>
+        </div>
+        <img src="~/Assets/Marketing/SubPages/webSub.jpg" alt="Second Description" class="image-below-text">
+    </main>
+  
+
+    <script src="~/js/site.js"></script>
+
+
+</body>
+</html>
+
+<style>
+    .custom-link {
+        color: #2F5D63;
+        text-decoration: none;
+    }
+
+        .custom-link:hover {
+            color: lightgrey;
+        }
+
+</style>

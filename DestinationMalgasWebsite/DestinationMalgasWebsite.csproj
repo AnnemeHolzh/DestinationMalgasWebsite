@@ -8,10 +8,8 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Assets\Fonts\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="EASendMail" Version="7.9.2.6" />
+
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.7">
       <PrivateAssets>all</PrivateAssets>

@@ -1,5 +1,67 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/boating.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <main>
+
+        <div class="grid-wrapper">
+            <div class="grid-container">
+                <div class="grid-item" data-id="1">
+                    <img src="~/Assets/Destination/malagasColumn.jpg" alt="Image 1">
+                </div>
+
+                <div class="grid-item" data-id="2">
+                    <img src="~/Assets/Destination/ferryColumn.jpg" alt="Image 1">
+                </div>
+
+                <div class="grid-item" data-id="3">
+                    <img src="~/Assets/Destination/boathouseColumn.jpg" alt="Image 1">
+                </div>
+            </div>
+
+            <div id="left-arrow" class="arrow left-arrow">
+                <img src="~/Assets/Destination/Arrows/leftArrow.svg" alt="Left Arrow">
+            </div>
+            <div id="right-arrow" class="arrow right-arrow">
+                <img src="~/Assets/Destination/Arrows/rightArrow.svg" alt="Right Arrow">
+            </div>
+        </div>
+
+            
+    </main>
+
+    <script>
+        document.querySelectorAll('.grid-item').forEach(item => {
+            let timer;
+
+            item.addEventListener('mouseover', () => {
+                timer = setTimeout(() => {
+                    document.querySelector('.grid-item.scale')?.classList.remove('scale');
+                    item.classList.add('scale');
+                }, 500);
+            });
+
+            item.addEventListener('mouseout', () => {
+                clearTimeout(timer);
+                item.classList.remove('scale');
+            });
+        });
+
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const url = item.getAttribute('data-url');
+                window.location.href = url;
+            });
+        });
+    </script>
+
+    <script src="~/js/DestinationLogic.js"></script>
+</body>
+</html>

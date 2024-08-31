@@ -1,5 +1,68 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/boating.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+  
+    <main>
+        <div class="grid-wrapper">
+            <div class="grid-container">
+                <div class="grid-item" data-id="1" data-url="@Url.Action("Website", "Marketing")">
+                    <img src="~/Assets/Marketing/websiteColumn.jpg" alt="Image 1">
+                </div>
+
+                <div class="grid-item" data-id="2" data-url="@Url.Action("SocialMedia", "Marketing")">
+                    <img src="~/Assets/Marketing/socialColumn.jpg" alt="Image 2">
+                </div>
+
+                <div class="grid-item" data-id="3" data-url="@Url.Action("DirectMarketing", "Marketing")">
+                    <img src="~/Assets/Marketing/marketingColumn.jpg" alt="Image 3">
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <script>
+        document.querySelectorAll('.grid-item').forEach(item => {
+        let timer;
+
+        item.addEventListener('mouseover', () => {
+        timer = setTimeout(() => {
+        // Remove 'scale' class from any currently scaled item
+        document.querySelector('.grid-item.scale')?.classList.remove('scale');
+
+        // Add 'scale' class to the hovered item
+        item.classList.add('scale');
+        }, 500); // Adjust delay as needed
+        });
+
+        item.addEventListener('mouseout', () => {
+        clearTimeout(timer); // Clear the timer if hover is removed before the delay
+        item.classList.remove('scale');
+        });
+        });
+
+            document.querySelectorAll('.grid-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const url = item.getAttribute('data-url');
+                    window.location.href = url;
+                });
+            });
+    </script>
+
+    <script src="~/js/site.js"></script>
+
+</body>
+
+</html>
+
+

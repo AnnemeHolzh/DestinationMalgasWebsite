@@ -1,60 +1,41 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>@ViewData["Title"] - My ASP.NET Application</title>
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/home.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" style="display: flex; align-items: center;">
-                        <img src="~/Assets/Logo/logoBlackTransparent.svg" alt="Destination Malgas Logo" />
-                    </a>
-                </div>
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="/" style="color: black;">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Accommodation" asp-action="Accommodation">ACCOMMODATION</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Boating" asp-action="Boating">BOATING</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Marketing" asp-action="Marketing">MARKETING</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Destination" asp-action="Destination">DESTINATION</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Contact" asp-action="ContactUs">CONTACT US</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Login" asp-action="Login" style="display: flex; align-items: center;">
-                            <img src="~/Assets/Landing/Icon/searchIcon.svg" alt="Search" class="nav-icon height: 10px; width: 10px;" />
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Login" asp-action="Login" style="display: flex; align-items: center;">
-                            <img src="~/Assets/Landing/Icon/loginIcon.svg" alt="Login" class="nav-icon height: 10px; width: 10px;" />
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
 
     <main>
-        <section class="section section1">
-            <button class="circle-button left-button" onclick="changeSlide('prev')">
+    
+        <section class="section section1" id="section1">
+                <div class="button-container">
+            <button id="left-button-section1" class="circle-button left-button" onclick="changeSlide('prev')">
                 <img src="~/Assets/Landing/Buttons/leftCircleButton.svg" alt="Left Button">
             </button>
 
-            <button class="circle-button right-button" onclick="changeSlide('next')">
+            <button id="right-button-section1" class="circle-button right-button" onclick="changeSlide('next')">
                 <img src="~/Assets/Landing/Buttons/rightCircleButton.svg" alt="Right Button">
             </button>
+                </div>
 
             <div class="slide-container visible">
-                <img id="slide-svg" src="~/Assets/Landing/TopText/DM_TopText_1.png" alt="Slide Text">
-                <p id="slide-description" class="slide-description">Welcome to Destination Malgas</p>
+                <img id="slide-svg" src="~/Assets/Landing/TopText/DM_Slide1.png" alt="Slide Text">
+                <p id="slide-description" class="slide-description">Get to know us! We aim to provide a comprehensive service to ensure your stay is memorable.</p>
                 <img id="slide-no" src="~/Assets/Landing/TopText/Numbers/slide01.png" alt="Slide Number">
                 <img id="slide-line" src="~/Assets/Landing/Img/landingLine.png" alt="line" />
+
+                <button id="contactButton" class="contact-button">
+                    <img src="~/Assets/Landing/Buttons/contactUsButtonDefault.svg" alt="Contact Us">
+                </button>
+
             </div>
+
+
 
             <!-- Carousel Container -->
             <div class="carousel-container">
@@ -66,25 +47,85 @@
                     <img class="carousel-image" src="~/Assets/Landing/Img/Carousel/carousel_img5.png" alt="Image 5">
                     <img class="carousel-image" src="~/Assets/Landing/Img/Carousel/carousel_img6.png" alt="Image 6">
                     <img class="carousel-image" src="~/Assets/Landing/Img/Carousel/carousel_img7.png" alt="Image 7">
+                    <img class="carousel-image" src="~/Assets/Landing/Img/Carousel/carousel_img1.png" alt="Image 1">
+                    <img class="carousel-image" src="~/Assets/Landing/Img/Carousel/carousel_img2.png" alt="Image 2">
                 </div>
             </div>
 
-            
+            <script>
+                document.getElementById('contactButton').addEventListener('click', function() {
+                    window.location.href = '/Contact/ContactUs'; // Adjust this URL if needed
+                });
+            </script>
+
             <script src="~/js/LandingSlideshowLogic.js"></script>
         </section>
 
 
-
         <section class="section section2">
-            <!-- Content for the second section -->
+            <div class="aboutHeader">
+                <img src="~/Assets/Landing/Img/aboutUsHeader.png" alt="About Us Header" />
+            </div>
+            <div class="aboutContent">
+                <img id="about-image" src="~/Assets/Landing/Img/aboutUsImage.png" alt="About Us Image" />
+                <div class="about-text">
+                    <h2>Get to know us!</h2>
+                    <p>
+                        Our mission is to provide a comprehensive umbrella of services designed to enhance your experience, whether you’re here for boating, accommodation, business, tourism, or events.<br>
+                        Explore the best of Malgas with us and discover everything this charming destination has to offer.
+                    </p>
+
+                    <button class="about-button" id="ourServicesButton">
+                        <img src="~/Assets/Landing/Buttons/ourservicesButtonDefault.svg" alt="Our Services">
+                    </button>
+
+                </div>
+            </div>
         </section>
+
         <section class="section section3">
-            <!-- Content for the third section -->
+            <div class="visitHeader">
+                <img src="~/Assets/Landing/Img/visitMalgasHeader.png" alt="Visit Us Header" />
+            </div>
+
+            <div class="aboutContent">
+                <div class="text-container">
+                    <div id="small-text" class="small-text">Malgas is more than just a place to stay—it's a destination filled with natural beauty and a variety of activities:</div>
+                    <div id="reason-text" class="reason-text">
+                        <h2 id="reason-h2">1. Stunning Scenery</h2>
+                        <p id="reason-body">
+                            Immerse yourself in the breathtaking landscapes that surround you. <br><br>
+                            From lush riverbanks to rolling hills, every view is a postcard moment.
+                        </p>
+                    </div>
+                </div>
+                <img id="reason-image" src="~/Assets/Landing/Img/VisitCarousel/reasons1.png" alt="About Us Image" />
+            </div>
+
+            <button id="left-button-section3" class="circle-button left-button" onclick="changeReasonSlide('prev')">
+                <img src="~/Assets/Landing/Buttons/leftCircleButton.svg" alt="Left Button">
+            </button>
+
+            <button id="right-button-section3" class="circle-button right-button" onclick="changeReasonSlide('next')">
+                <img src="~/Assets/Landing/Buttons/rightCircleButton.svg" alt="Right Button">
+            </button>
         </section>
+
+
+
+
+
+        
     </main>
 
-    <footer>
-        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-    </footer>
+
+    <script>
+        document.getElementById('ourServicesButton').addEventListener('click', function() {
+            document.getElementById('section1').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+
+    <script src="~/js/site.js"></script>
+
 </body>
 </html>
