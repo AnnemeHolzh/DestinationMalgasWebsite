@@ -1,57 +1,101 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-@model House
+﻿<!DOCTYPE html>
+@model DestinationMalgasWebsite.Models.House
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/accommodatoin_Details.css" />
+</head>
+<body>
+    <main>
+        <img src="~/Assets/Accommodation/houseHeader.jpg" alt="Heading Image" class="responsive-heading-image" />
+        <!-- Property Details -->
+        <div class="property-details">
+            <h1>@Model.Name</h1>
+            <p class="price">R @Model.Price per night</p>
+            <p>@Model.Description1</p>
+            <!-- Add more details as needed -->
+        </div>
 
-<!-- House Name -->
-<h1>@Model.Name</h1>
+        <!-- Flex Container for Photo Gallery and Booking Form -->
+        <div class="flex-container">
+            <!-- Photo Gallery -->
+            <div class="gallery-container">
+                @{
+                    var remainingPhotosCount = Model.ImageUrls.Count - 7;
+                }
+                <div class="photo-gallery">
+                    @for (int i = 0; i < Math.Min(Model.ImageUrls.Count, 8); i++)
+                    {
+                        var isLastPhoto = (i == 7 && remainingPhotosCount > 0);
+                        <img src="@Model.ImageUrls[i]" alt="Photo @i" class="gallery-photo @(isLastPhoto ? "last-photo" : "")"
+                        @(isLastPhoto ? $"data-remaining-count=\"{remainingPhotosCount}\"" : "") />
+                    }
+                </div>
+            </div>
 
-<!-- Sleeps and Price -->
-<p><strong>Sleeps:</strong> @Model.Sleeps</p>
-<p><strong>Price:</strong> $@Model.Price</p>
+            <!-- Booking Form -->
+            <div class="form-container">
+                <form class="booking-form">
+                    <form class="booking-form">
+                        <h2>Booking Inquiry</h2>
 
-<!-- Introduction -->
-<h3>Introduction</h3>
-<p>@Model.Introduction</p>
+                        <label for="full-name">Full Name:</label>
+                        <input type="text" id="full-name" name="full-name" required>
 
-<!-- Location and Surroundings -->
-<h3>Location & Surroundings</h3>
-<p>@Model.LocationSurroundings</p>
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
 
-<!-- Features and Layout -->
-<h3>Features & Layout</h3>
-<p>@Model.FeaturesLayout</p>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
 
-<!-- Activities -->
-<h3>Activities</h3>
-<p>@Model.Activities</p>
+                        <label for="arrival-date">Arrival Date:</label>
+                        <input type="date" id="arrival-date" name="arrival-date" required>
 
-<!-- House Images -->
-<h3>Images</h3>
-<div>
-    @foreach (var imageUrl in Model.ImageUrls)
-    {
-        <img src="@imageUrl" alt="@Model.Name" style="max-width:100%; height:auto; margin-bottom:10px;" />
-    }
-</div>
+                        <label for="departure-date">Departure Date:</label>
+                        <input type="date" id="departure-date" name="departure-date" required>
 
-<!-- Amenities -->
-<h3>Amenities</h3>
-<ul>
-    @foreach (var amenity in Model.Amenities)
-    {
-        <li>
-            <img src="@amenity.IconUrl" alt="@amenity.Name" style="width:24px; height:24px; margin-right:5px;" />
-            @amenity.Name
-        </li>
-    }
-</ul>
+                        <label for="adults">Adults:</label>
+                        <input type="number" id="adults" name="adults" min="1" required>
 
-<!-- Room Configuration -->
-<h3>Room Configuration</h3>
-<ul>
-    @foreach (var room in Model.RoomConfig)
-    {
-        <li><strong>@room.Key:</strong> @room.Value</li>
-    }
-</ul>
+                        <label for="kids">Kids:</label>
+                        <input type="number" id="kids" name="kids" min="0" required>
+
+                        <label for="comments">Comments:</label>
+                        <textarea id="comments" name="comments" style="resize: none; width: 100%; height: 4rem;"></textarea>
+
+                        <button type="submit">Submit</button>
+                    </form>
+
+                </form>
+
+            </div>
+        </div>
+
+
+        <!-- Amenities -->
+        <div class="amenities-container">
+            <h2>Amenities</h2>
+            <ul>
+                @foreach (var amenity in Model.Amenities)
+                {
+                    <li>
+                        <img src="@amenity.IconUrl" alt="@amenity.Name" class="amenity-icon" />
+                        @amenity.Name
+                    </li>
+                }
+            </ul>
+        </div>
+
+
+        <!-- Reviews (Optional) -->
+        <div class="reviews-container">
+            <h2>Reviews</h2>
+            <!-- Reviews section -->
+        </div>
+
+        <script>
+            document.querySelector('.gallery-photo.last-photo').setAttribute('data-remaining-count', '27');
+        </script>
+    </main>
+</body>
+</html>
