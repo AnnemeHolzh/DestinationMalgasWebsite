@@ -1,4 +1,5 @@
-﻿using DestinationMalgasWebsite.DBServices;
+﻿using DestinationMalgasWebsite.BackEndServices.Prog7311_POE_ST10071737.Services;
+using DestinationMalgasWebsite.DBServices;
 using DestinationMalgasWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -828,6 +829,27 @@ namespace DestinationMalgasWebsite.Controllers
                 return NotFound();
             }
             return View(house);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SendEmail(string name, string email, string phoneNumber, DateTime arivalDate, DateTime departureDate, int adults, int kids, string comments, string HouseName)
+        {
+            var emailService = new EmailService
+            {
+                name = name,
+                email = email,
+                phoneNumber = phoneNumber,
+                arrivalDate = arivalDate.ToShortDateString(),
+                departureDate = departureDate.ToShortDateString(),
+                adults = adults,
+                kids = kids,
+                comments = comments,
+                HouseName = HouseName
+            };
+
+            emailService.AccomadationpageSender();
+
+            return RedirectToAction("Accommodation");
         }
 
     }

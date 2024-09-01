@@ -8,7 +8,7 @@
         {
             private string senderEmail = "destinationmalgasdev1@gmail.com";
             private string senderPassword = "ruputpehevakhfmm";
-            private string recieverEmail = "jaspervanniekerk1111@gmail.com";//twan@destinationmalgas.co.za
+            private string recieverEmail = "twan@destinationmalgas.co.za";
 
 
             public string subject { get; set; } = "";
@@ -81,7 +81,7 @@
             {
                 try
                 {
-                    string AccSubject = "house name inquiry for "+ this.arrivalDate +" - " + this.departureDate;
+                    string AccSubject = this.HouseName + " inquiry for " + this.arrivalDate +" - " + this.departureDate;
 
                     string constructedBody = 
                             "Hi my name is " + this.name +
@@ -102,7 +102,7 @@
                     oMail.To = recieverEmail;
 
                     // Set email subject
-                    oMail.Subject = subject;
+                    oMail.Subject = AccSubject;
                     // Set email body
                     oMail.TextBody = constructedBody;
 
