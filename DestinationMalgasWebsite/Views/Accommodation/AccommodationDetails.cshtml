@@ -1,12 +1,17 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
 @model DestinationMalgasWebsite.Models.House
 <html>
 <head>
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/accommodatoin_Details.css" />
+
 </head>
 <body>
-    <main>
+    <main background="black">
         <img src="~/Assets/Accommodation/houseHeader.jpg" alt="Heading Image" class="responsive-heading-image" />
         <!-- Property Details -->
         <div class="property-details">
@@ -20,18 +25,15 @@
         <div class="flex-container">
             <!-- Photo Gallery -->
             <div class="gallery-container">
-                @{
-                    var remainingPhotosCount = Model.ImageUrls.Count - 7;
-                }
                 <div class="photo-gallery">
                     @for (int i = 0; i < Math.Min(Model.ImageUrls.Count, 8); i++)
                     {
-                        var isLastPhoto = (i == 7 && remainingPhotosCount > 0);
-                        <img src="@Model.ImageUrls[i]" alt="Photo @i" class="gallery-photo @(isLastPhoto ? "last-photo" : "")"
-                        @(isLastPhoto ? $"data-remaining-count=\"{remainingPhotosCount}\"" : "") />
+                        <img src="@Model.ImageUrls[i]" alt="Photo @i" class="gallery-photo" onclick="redirectToGallery(@Model.Id)" />
+                        
                     }
                 </div>
             </div>
+
 
             <!-- Booking Form -->
             <div class="form-container">
@@ -70,6 +72,21 @@
 
         </div>
 
+        <div class="property-details">
+            <h1>About this Space</h1>
+            <p>@Model.Description2</p>
+            <p>@Model.Description3</p>
+            <p>@Model.Description4</p>
+            <p>@Model.Description5</p>
+
+            <h1>Room Configuration</h1>
+            <div class="room-config">
+                @foreach (var room in Model.RoomConfig)
+                {
+                    <p><strong>@room.RoomName</strong>: @room.BedType</p>
+                }
+            </div>
+            </div>
 
         <!-- Amenities -->
         <div class="amenities-container">
@@ -93,8 +110,14 @@
         </div>
 
         <script>
-            document.querySelector('.gallery-photo.last-photo').setAttribute('data-remaining-count', '27');
+            function redirectToGallery(houseId) {
+                window.location.href = '@Url.Action("HouseGallery", "Accommodation")?id=' + houseId;
+            }
         </script>
+
+
+
     </main>
+
 </body>
 </html>

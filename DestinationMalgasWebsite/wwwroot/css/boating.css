@@ -94,3 +94,30 @@ body, html {
 .arrow:hover {
     color: #f0f0f0;
 }
+
+/* Media Queries for Adjusting Grid Item Heights */
+@media (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr); /* Create 3 rows */
+        grid-template-columns: 1fr; /* Single column */
+        width: 100%;
+    }
+
+    .grid-item {
+        height: auto; /* Adjust height to fit content */
+    }
+}
+
+/* For smaller screens (e.g., mobile phones) */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-rows: repeat(3, 1fr); /* Create 3 rows */
+        grid-template-columns: 1fr; /* Single column */
+        width: 100%;
+    }
+
+    .grid-item {
+        height: auto; /* Adjust height to fit content */
+    }
+}

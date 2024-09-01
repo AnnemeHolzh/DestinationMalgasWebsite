@@ -1,0 +1,60 @@
+﻿@{
+    Layout = null;
+}
+@model DestinationMalgasWebsite.Models.House
+<link rel="stylesheet" href="~/css/houseGallery.css" />
+
+<html>
+<body>
+    <main>
+        <a href="@Url.Action("AccommodationDetails", "Accommodation", new { id = Model.Id })">
+            <img src="~/Assets/Landing/Buttons/back.svg" alt="Back" class="backBtn" />
+        </a>
+        <div class="gallery-container">
+            <div class="photo-gallery">
+                @for (int i = 0; i < Model.ImageUrls.Count; i++)
+                {
+                    <img src="@Model.ImageUrls[i]" alt="Photo @i" class="gallery-photo" onclick="openLightbox('@Model.ImageUrls[i]')" />
+                }
+            </div>
+        </div>
+
+        <!-- Lightbox Container -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img" />
+        </div>
+    </main>
+</body>
+</html>
+
+<script>
+    function openLightbox(imageSrc) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        // Set the src of the lightbox image
+        lightboxImg.src = imageSrc;
+
+        // Show the lightbox
+        lightbox.style.display = 'flex';
+
+        // Add transition effects
+        setTimeout(() => {
+            lightbox.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            lightbox.style.backdropFilter = 'blur(8px)';
+        }, 0); // Short delay to allow display to apply
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+
+        // Hide the lightbox with transition effect
+        lightbox.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        lightbox.style.backdropFilter = 'blur(0)';
+
+        setTimeout(() => {
+            lightbox.style.display = 'none';
+        }, 10); // Match the transition duration
+    }
+</script>

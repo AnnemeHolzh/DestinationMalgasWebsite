@@ -3,17 +3,17 @@ html, body {
     height: 100%;
     margin: 0;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: black;
 }
 
 /* Main container styling */
 main {
-    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: stretch; /* Changed from center to stretch */
     width: 100%;
-    padding: 0;
     margin: 0;
+    min-height: 100vh; /* Ensure main container takes full viewport height */
 }
 
 /* Heading image styling */
@@ -32,16 +32,18 @@ main {
     margin-left: 1vw; /* Margin for overlap adjustment if needed */
     margin-right: 1vw;
 }
-.property-details h1{
-    font-family: Heading;
-    color: white; 
-    font-size: 2vw;
-}
-.property-details p{
-    font-family: Body;
-    color: white;
-    font-size: 1vw;
-}
+
+    .property-details h1 {
+        font-family: Heading;
+        color: white;
+        font-size: 2vw;
+    }
+
+    .property-details p {
+        font-family: Body;
+        color: white;
+        font-size: 1vw;
+    }
 
 /* Price styling */
 .price {
@@ -57,6 +59,9 @@ main {
     max-width: none; /* Remove max-width constraint */
     padding: 0;
     margin: 20px 0;
+    flex: 1; /* Allow flex container to grow */
+    flex-direction: row; /* Default direction */
+    overflow: hidden;
 }
 
 /* Gallery container styling */
@@ -70,26 +75,28 @@ main {
 
 .photo-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-auto-rows: 200px;
-    gap: 15px;
-    padding: 0.5vw;
-    margin-left: 0.5vw;
-    margin-right: 0.5vw;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Auto-fill columns */
+    grid-auto-rows: minmax(200px, auto); /* Auto adjust row height */
+    gap: 15px; /* Maintain gaps between images */
+    padding: 0;
+    margin: 0;
+    align-items: start; /* Align items to the start to reduce empty space */
 }
+
 
 .gallery-photo {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 100%; /* Ensure the image takes up the full height of its grid cell */
+    object-fit: cover; /* Ensure the image maintains its aspect ratio */
     border-radius: 8px;
+    cursor: pointer;
 }
 
-    /* Optional: Make some photos span multiple grid cells for variety */
     .gallery-photo:nth-child(4n+1) {
         grid-column: span 2;
         grid-row: span 2;
     }
+
 
     /* Overlay for the last photo */
     .gallery-photo.last-photo {
@@ -115,65 +122,84 @@ main {
             z-index: 10;
         }
 
-
 /* Form container styling */
 .form-container {
     flex: 2;
     width: 100%;
     max-width: none; /* Remove max-width constraint */
     padding: 20px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-left: 0.5vw;
-    margin-right: 0.5vw;
+    margin-left: 1vw; /* Added margin to create space from the screen edge */
+    margin-right: 1vw; /* Added margin to create space from the screen edge */
 }
+    .form-container h2 {
+        font-family: Heading;
+        font-size: 2vw; /* Adjust size as needed */
+        color: black;
+        margin-bottom: 20px; /* Space below the heading */
+    }
 
 /* Booking form styling */
 .booking-form label {
     display: block;
     margin: 10px 0 5px;
+    font-family: Heading;
+    color: black;
 }
 
-.booking-form input {
+.booking-form input,
+.booking-form textarea {
     width: 100%;
+    height: 1.8vw;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    background: #D9D9D9;
+    border-radius: 0.5vw;
+    font-family: contactBoxBody;
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Display ellipsis (...) when text overflows */
+    overflow: hidden; /* Hide both vertical and horizontal scrollbars */
 }
 
 .booking-form button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
-    color: white;
+    background-color: #5E6845;
+    color: #222812;
     border: none;
-    border-radius: 4px;
+    border-radius: 0.5vw;
     cursor: pointer;
+    font-family: Heading;
 }
 
     .booking-form button:hover {
-        background-color: #0056b3;
+        background-color: #535D3D;
+        color: #2A3018;
     }
 
 /* Amenities container styling */
 .amenities-container {
     width: 100%;
-    max-width: none; /* Remove max-width constraint */
     padding: 20px;
-    background-color: dimgrey;
+    background-color: transparent;
     margin: 0;
+    font-family: Heading;
+    color: white;
+    font-size: 1.4vw;
+
 }
 
     /* accommodatoin_Details.css */
-
     .amenities-container ul {
         display: grid;
         grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
         gap: 10px; /* Space between items */
         list-style-type: none; /* Remove bullet points */
         padding: 0;
+        width: 100%;
     }
 
     .amenities-container li {
@@ -187,14 +213,14 @@ main {
     height: auto;
     padding: 1.3vw;
     color: white;
-    font-family:Body
+    font-family: Body;
 }
 
-.amanetiesHead{
-    font-family:Headin;
-    font-size: 2.5vw;
+.amenetiesHead {
+    font-family: Heading;
+    font-size: 4vw;
+    color: white;
 }
-                           
 
 @font-face {
     font-family: Heading;
@@ -205,18 +231,66 @@ main {
     font-family: Body;
     src: url('/Assets/Fonts/Montserrat-Light.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: contactBoxBody;
+    src: url('/Assets/Fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+/* Responsive Design */
 /* Responsive Design */
 @media (max-width: 900px) {
     .property-details, .gallery-container, .form-container, .amenities-container {
-        width: 100%; /* Changed from 90% to 100% */
+        width: 100%;
+        margin-left: 0; /* Remove left margin for small screens */
+        margin-right: 0; /* Remove right margin for small screens */
     }
 
-    ..photo-gallery {
+    .photo-gallery {
         grid-template-columns: repeat(3, 1fr);
     }
 
     .gallery-photo {
         flex: 1 1 calc(50% - 10px); /* 2 photos per row */
+    }
+
+    .property-details h1 {
+        font-size: 1.8vw;
+    }
+
+    .property-details p {
+        font-size: 1.2vw;
+    }
+
+    .amenities-container {
+        font-size: 1rem;
+    }
+
+    .amenitiesHead {
+        font-size: 1.8rem;
+    }
+
+    .amenity-icon {
+        width: 2rem;
+        padding: 0.5rem;
+    }
+
+    .amenities-container ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Move the booking form below the photo gallery */
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .gallery-container {
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        margin-top: 0;
+        padding: 10px; /* Adjust padding for smaller screens */
     }
 }
 
@@ -226,6 +300,46 @@ main {
     }
 
     .gallery-photo {
-        flex: 1 1 calc(100% - 5px); /* Full width for 1 column */
+        flex: 1 1 calc(100% - 5px);
+    }
+
+    .property-details h1 {
+        font-size: 1.5rem;
+    }
+
+    .property-details p {
+        font-size: 1rem;
+    }
+
+    .amenities-container {
+        font-size: 0.6rem;
+    }
+
+    .amenitiesHead {
+        font-size: 1.8rem;
+    }
+
+    .amenity-icon {
+        width: 2rem;
+        padding: 0.5rem;
+    }
+
+    .amenities-container ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Move the booking form below the photo gallery */
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .gallery-container {
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        margin: 0 5px; /* Add a small margin for better fit */
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
     }
 }
+

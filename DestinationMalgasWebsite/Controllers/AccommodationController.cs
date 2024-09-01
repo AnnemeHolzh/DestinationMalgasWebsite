@@ -80,7 +80,7 @@ namespace DestinationMalgasWebsite.Controllers
                new Amenity { Name = "Outdoor Seating", IconUrl = "/Assets/Accommodation/Icons/outdoorSeatingIcon.svg" },
 
             },
-            GlanceDesc = "Peaceful, secluded family holiday retreat that offers a unique back-to-basics experience."
+            GlanceDesc = "Peaceful, secluded family retreat offering a unique back-to-basics experience."
         },
 
          new House
@@ -150,7 +150,7 @@ namespace DestinationMalgasWebsite.Controllers
                 new Amenity { Name = "Slipway", IconUrl = "/Assets/Accommodation/Icons/slipwayIcon.svg" },
                 new Amenity { Name = "Jetty", IconUrl = "/Assets/Accommodation/Icons/jettyIcon.svg" }
             },
-            GlanceDesc = "A perfect retreat for those seeking tranquillity and quality time with family and friends."
+            GlanceDesc = "Perfect for those seeking tranquillity and quality time with family and friends."
         },
 
           new House
@@ -208,7 +208,7 @@ namespace DestinationMalgasWebsite.Controllers
                 new Amenity { Name = "Coffee Plunger", IconUrl = "/Assets/Accommodation/Icons/frenchpressIcon.svg" },
                 new Amenity { Name = "Coffee Machine", IconUrl = "/Assets/Accommodation/Icons/coffeeMachineIcon.svg" }
             },
-            GlanceDesc = "A secluded family holiday home perched on the serene banks of the majestic Breede River in Malgas."
+            GlanceDesc = "A secluded family home on the serene Breede River banks in Malgas."
         },
 
            new House
@@ -269,7 +269,7 @@ namespace DestinationMalgasWebsite.Controllers
                 new Amenity { Name = "Slipway", IconUrl = "/Assets/Accommodation/Icons/slipwayIcon.svg" },
                 new Amenity { Name = "Jetty", IconUrl = "/Assets/Accommodation/Icons/jettyIcon.svg" }
             },
-            GlanceDesc = "A hidden gem offering the perfect escape into nature's beauty."
+            GlanceDesc = "A hidden gem for a perfect escape into nature's beauty."
         },
 
             new House
@@ -322,7 +322,7 @@ namespace DestinationMalgasWebsite.Controllers
                 new Amenity { Name = "slipway", IconUrl = "/Assets/Accommodation/Icons/slipwayIcon.svg" },
                 new Amenity { Name = "Jetty", IconUrl = "/Assets/Accommodation/Icons/jettyIcon.svg" },
             },
-            GlanceDesc = "Owl Cottage is a delightful retreat on the Breede River, embodying the essence of simplicity with its “less is more” philosophy."
+            GlanceDesc = "A retreat on the Breede River, embracing a “less is more” philosophy"
         },
 
             new House
@@ -389,7 +389,7 @@ namespace DestinationMalgasWebsite.Controllers
                 new Amenity { Name = "Fridge", IconUrl = "/Assets/Accommodation/Icons/fridgeIcon.svg" },
                 new Amenity { Name = "Gas Hob", IconUrl = "/Assets/Accommodation/Icons/gashobIcon.svg" }
             },
-            GlanceDesc = "Delbridge House is a newly renovated gem offering a perfect blend of comfort and tranquillity."
+            GlanceDesc = "Newly renovated, blending comfort and tranquillity."
         },
 
             new House
@@ -458,7 +458,7 @@ namespace DestinationMalgasWebsite.Controllers
                 new Amenity { Name = "TV", IconUrl = "/Assets/Accommodation/Icons/tvIcon.svg" },
                 new Amenity { Name = "WiFi (Purchase Seperately)", IconUrl = "/Assets/Accommodation/Icons/wifiIcon.svg" },
             },
-            GlanceDesc = "H&M House offers an exceptional retreat for families and large groups, accommodating up to 16 guests."
+            GlanceDesc = "An exceptional retreat for families and groups, accommodating up to 16."
         },
 
             new House
@@ -509,7 +509,7 @@ namespace DestinationMalgasWebsite.Controllers
                 new Amenity { Name = "Solar", IconUrl = "/Assets/Accommodation/Icons/solarIcon.svg" },
                 new Amenity { Name = "Bluetooth Sound System", IconUrl = "/Assets/Accommodation/Icons/bluetoothSpeakerIcon.svg" }
             },
-            GlanceDesc = "Embark on a unique and memorable houseboat adventure on the picturesque Breede River."
+            GlanceDesc = "Unique and memorable houseboat adventure on the picturesque Breede River."
         },
             new House
         {
@@ -567,7 +567,7 @@ namespace DestinationMalgasWebsite.Controllers
                 new Amenity { Name = "Slipway", IconUrl = "/Assets/Accommodation/Icons/slipwayIcon.svg" },
                 new Amenity { Name = "Jetty", IconUrl = "/Assets/Accommodation/Icons/jettyIcon.svg" }
             },
-            GlanceDesc = "Heron Cottage is a delightful retreat on the Breede River, embodying the essence of simplicity with its “less is more” philosophy."
+            GlanceDesc = "A retreat on the Breede River, with a “less is more” philosophy."
         },
 
             new House
@@ -627,7 +627,7 @@ namespace DestinationMalgasWebsite.Controllers
                 new Amenity { Name = "Outdoor Seating", IconUrl = "/Assets/Accommodation/Icons/outdoorSeatingIcon.svg" },
                 new Amenity { Name = "WiFi", IconUrl = "/Assets/Accommodation/Icons/wifiIcon.svg" }
             },
-            GlanceDesc = "\"InfantaFish House is a charming and cosy holiday retreat located in the serene coastal village of Infanta, a hidden gem on the South African coastline."
+            GlanceDesc = "A charming retreat in Infanta, a hidden gem on the South African coast."
         },
 
             new House
@@ -681,7 +681,7 @@ namespace DestinationMalgasWebsite.Controllers
                 new Amenity { Name = "Food Steamer", IconUrl = "/Assets/Accommodation/Icons/steamerIcon.svg" },
                 new Amenity { Name = "TV", IconUrl = "/Assets/Accommodation/Icons/tvIcon.svg" }
             },
-            GlanceDesc = "A serene riverside haven that perfectly captures the essence of a carefree, barefoot lifestyle."
+            GlanceDesc = "A serene riverside haven capturing a carefree, barefoot lifestyle."
         },
 
             new House
@@ -760,7 +760,7 @@ namespace DestinationMalgasWebsite.Controllers
                 new Amenity { Name = "Jetty", IconUrl = "/Assets/Accommodation/Icons/jettyIcon.svg" },
                 new Amenity { Name = "Concierge Service", IconUrl = "/Assets/Accommodation/Icons/conciergeIcon.svg" }
             },
-            GlanceDesc = "Nestled on the tranquil banks of the majestic Breede River, Smit House is a secluded family holiday home that offers the perfect blend of luxury, nature, and adventure."
+            GlanceDesc = "A secluded home on the Breede River blending luxury, nature, and adventure."
         },
 
              new House
@@ -805,7 +805,7 @@ namespace DestinationMalgasWebsite.Controllers
                 new Amenity { Name = "Solar", IconUrl = "/Assets/Accommodation/Icons/solarIcon.svg" },
                 new Amenity { Name = "Bluetooth Sound System", IconUrl = "/Assets/Accommodation/Icons/bluetoothSpeakerIcon.svg" },
             },
-            GlanceDesc = "Embark on a unique and memorable houseboat adventure on the picturesque Breede River, perfect for fishing enthusiasts, birdwatchers, or anyone looking to spend quality time in nature."
+            GlanceDesc = "Memorable houseboat adventure on the Breede River, ideal for fishing, birdwatching, or nature."
         }
         };
       
@@ -830,6 +830,27 @@ namespace DestinationMalgasWebsite.Controllers
             }
             return View(house);
         }
+
+        public IActionResult HouseGallery(int id)
+        {
+            var house = houses.FirstOrDefault(h => h.Id == id);
+            if (house == null)
+            {
+                return NotFound();
+            }
+
+            // Filter out non-existing images
+            house.ImageUrls = house.ImageUrls.Where(url => ImageExists(url)).ToList();
+
+            return View(house);
+        }
+
+        private bool ImageExists(string path)
+        {
+            var physicalPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", path.TrimStart('/'));
+            return System.IO.File.Exists(physicalPath);
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> SendEmail(string name, string email, string phoneNumber, DateTime arivalDate, DateTime departureDate, int adults, int kids, string comments, string HouseName)

@@ -11,10 +11,13 @@
 </head>
 <body >
     <main>
-        <img src="~/Assets/Accommodation/houseHeader.jpg" alt="Heading Image" class="responsive-heading-image" />
-        
+        <div class="headingWrapper">
+            <img src="~/Assets/Accommodation/houseHeader.jpg" alt="Heading Image" class="responsive-heading-image" />
+            <img src="~/Assets/Landing/TopText/DM_Slide2.svg" alt="Title Image" class="title-image" />
+        </div>
+
         <div class="gridSection">
-        <div class="gridLayout">
+            <div class="gridLayout">
                 @foreach (var house in Model)
                 {
                     <a href="@Url.Action("AccommodationDetails", "Accommodation", new { id = house.Id })">
@@ -27,9 +30,12 @@
                             {
                                 <img src="~/Assets/Accommodation/default.jpg" alt="Default Image" class="card-img">
                             }
-                            <div class="card-content">
-                                <h2 class="card-title">@house.Name</h2>
-                                <p class="card-description">@house.GlanceDesc</p>
+                            <div class="card-content-wrapper">
+                                <!-- New wrapper -->
+                                <div class="card-content">
+                                    <h2 class="card-title">@house.Name</h2>
+                                    <p class="card-description">@house.GlanceDesc</p>
+                                </div>
                                 <div class="card-info">
                                     <div class="info-item">
                                         <img src="~/Assets/Accommodation/Icons/bedIcon.svg" alt="Bed Icon" class="info-icon">
@@ -44,8 +50,8 @@
                         </div>
                     </a>
                 }
+            </div>
 
-        </div>
         </div>
     </main>
 

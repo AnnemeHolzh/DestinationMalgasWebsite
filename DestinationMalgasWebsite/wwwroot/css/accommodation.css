@@ -31,24 +31,54 @@ main {
     left: 1vw;
     right: 1vw
 }
+
+.headingWrapper {
+    position: relative; /* Creates a context for absolute positioning */
+    width: 100%; /* Adjust based on your layout */
+    height: auto; /* Adjust based on your layout */
+    overflow: hidden; /* Hide any content that overflows the wrapper */
+}
+
 .responsive-heading-image {
     width: 100%;
-    height: 50%;
-    object-fit: contain;
-    position: relative; /* Ensure this is relative to create a stacking context */
+    height: auto;
+    object-fit: cover; /* Adjust the fit based on your preference */
     z-index: 1; /* Set a lower z-index */
 }
 
+.title-image {
+    position: absolute; /* Position the title image over the heading image */
+    left: 1vh; /* Center horizontally */
+    z-index: 2; /* Ensure it's on top of the heading image */
+    width: 40%; /* Adjust the size based on your layout */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 9vw; 
+}
+
+.card-content-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 8px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    transition: transform 0.3s ease;
+    height: 40%; /* Adjust the height to make room for content */
+    overflow: hidden; /* Hide any overflowed content */
+}
+
+
 .card {
     position: relative;
-    background: #fff;
+    background: #000;
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
+    margin: 0;
 }
-
     .card::before {
         content: ""; /* Required for the pseudo-element */
         position: absolute; /* Positioned absolutely within the card */
@@ -56,7 +86,7 @@ main {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+        background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
         opacity: 0; /* Initially hidden */
         transition: opacity 0.3s ease; /* Smooth transition for the overlay */
         z-index: 1; /* Ensure it sits above the image but below the content */
@@ -72,47 +102,45 @@ main {
     }
 
         .card:hover .card-title {
-            transform: translateY(-3vw); /* Move text up */
+            transform: translateY(-2vw); /* Move text up */
             transition: opacity 0.3s ease; /* Smooth transition for the overlay */
         }
 
         .card:hover .card-description {
-            transform: translateY(-3vw); /* Move text up */
+            transform: translateY(-2vw); /* Move text up */
             transition: opacity 0.3s ease; /* Smooth transition for the overlay */
         }
 
 .card-img {
-    width: auto;
     height: 20vw;
+    width: auto;
+    min-height: 180px;
     object-fit: cover;
-    position: relative; /* Ensure it doesn't get hidden by overlay */
-    z-index: 0; /* Ensure it sits below the overlay */
+    z-index: 0;
 }
 
 .card-content {
-    position: absolute;
-    bottom: 0; /* Positions the content at the bottom of the card */
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Darker gradient */
-    color: #fff;
-    padding: 10px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 2; /* Ensure it sits above the overlay */
+    color: #fff;
+    margin-bottom: 0.5vw;
+    transform: translateY(4vw); /* Move text down to the bottom third */
+    transition: transform 0.3s ease; /* Smooth transition */
 }
 
+
 .card-info {
-    display: none; /* Initially hidden */
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for centering */
-    padding: 10px;
-    border-radius: 8px;
-    z-index: 3; /* Ensure it sits above other elements */
+    display: none; /* Completely hide the bed and bath info initially */
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 1vw;
+    z-index: 2;
+    color: #fff;
+    transform: translateY(2vw); /* Initially positioned lower */
+    transition: transform 0.3s ease; /* Smooth transition for moving up */
+}
+.card:hover .card-info {
+    display: flex; /* Show on hover */
+    transform: translateY(0); /* Move the icons into place */
 }
 
 .info-item {
@@ -124,58 +152,48 @@ main {
 }
 
 .info-icon {
-    width: 24px; /* Adjust as needed */
-    height: 24px; /* Adjust as needed */
-    margin-right: 5px;
+    width: 2vw; /* Adjust as needed */
+    height: 2vw; /* Adjust as needed */
+    margin-right: 1vw;
+    bottom: 0.5vw;
 }
 
 .info-text {
     font-size: 1rem;
-}
-.card:hover .card-info {
-    display: flex; /* Show on hover */
+    bottom: 0.5vw;
 }
 
+.info-icon, .info-text {
+    color: #fff; /* Ensure both icons and text are white */
+    fill: #fff; /* Ensure SVG icons are white */
+   
+}
+
+.card:hover .card-content {
+    transform: translateY(2vw); /* Move text slightly up on hover, keeping it in the bottom third */
+}
 .card-title {
-    font-size: 1.5rem;
+    font-size: 1.2vw;
     margin: 0;
     font-family: cardHeading;
+    opacity: 1; /* Ensure it stays visible */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
 .card-description {
-    font-size: 1rem;
-    margin-top: 5px;
+    font-size: 1.2vw;
+    margin-top: 0.1vw;
     font-family: cardBody;
+    overflow: hidden; /* Hide overflowed text */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    bottom: -1vw;
+    opacity: 1; /* Ensure it stays visible */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
-.amenities {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping of icons */
-    gap: 10px; /* Space between icons */
-}
 
-/* accommodatoin_Details.css */
 
-.amenities-container ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
-    gap: 10px; /* Space between items */
-    list-style-type: none; /* Remove bullet points */
-    padding: 0;
-}
 
-.amenities-container li {
-    display: flex;
-    align-items: center;
-}
-
-.amenity-icon {
-    margin-right: 8px; /* Space between icon and text */
-    width: 24px; /* Size of the icon */
-    height: 24px;
-}
-
-}
 @font-face {
     font-family: cardHeading;
     src: url('/Assets/Fonts/Montserrat-Bold.ttf') format('truetype');

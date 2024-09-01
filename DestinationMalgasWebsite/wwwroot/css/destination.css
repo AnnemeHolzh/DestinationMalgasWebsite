@@ -104,3 +104,78 @@ main {
     font-size: 60%;
     src: url('/Assets/Fonts/PermanentMarker-Regular.ttf') format('truetype');
 }
+
+@media (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr); /* Create 3 rows */
+        grid-template-columns: 1fr; /* Single column */
+        width: 100%;
+    }
+
+    .grid-item {
+        height: auto; /* Adjust height to fit content */
+    }
+
+    .navigation-arrows {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column; /* Arrange arrows vertically */
+        justify-content: space-between; /* Space out arrows vertically */
+        pointer-events: auto; /* Ensure arrows are clickable */
+        z-index: 1000; /* Ensure they are above other elements */
+    }
+
+    .arrow {
+        font-size: 36px; /* Adjust size for smaller screens */
+        transform: rotate(90deg); /* Rotate arrows to point up and down */
+    }
+
+    .left-arrow {
+        align-self: flex-start; /* Position at the top */
+    }
+
+    .right-arrow {
+        align-self: flex-end; /* Position at the bottom */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-rows: repeat(3, 1fr); /* Create 3 rows */
+        grid-template-columns: 1fr; /* Single column */
+        width: 100%;
+    }
+
+    .grid-item {
+        height: auto; /* Adjust height to fit content */
+    }
+
+    .navigation-arrows {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column; /* Arrange arrows vertically */
+        justify-content: space-between; /* Space out arrows vertically */
+        pointer-events: auto; /* Ensure arrows are clickable */
+        z-index: 1000; /* Ensure they are above other elements */
+    }
+
+    .arrow {
+        font-size: 36px; /* Adjust size for smaller screens */
+        transform: rotate(90deg); /* Rotate arrows to point up and down */
+    }
+
+    .left-arrow {
+        align-self: flex-start; /* Position at the top */
+    }
+
+    .right-arrow {
+        align-self: flex-end; /* Position at the bottom */
+    }
+}

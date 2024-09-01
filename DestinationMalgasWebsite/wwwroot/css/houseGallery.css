@@ -1,0 +1,80 @@
+﻿body {
+    background-color: white; /* Set body background to white if needed */
+}
+.gallery-container {
+    flex: 3;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 600px; /* Adjust this value as needed */
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Auto-fill columns */
+    grid-auto-rows: minmax(200px, auto); /* Auto adjust row height */
+    gap: 15px; /* Maintain gaps between images */
+    padding: 0;
+    margin: 0;
+    align-items: start; /* Align items to the start to reduce empty space */
+}
+
+
+.gallery-photo {
+    width: 100%;
+    height: 100%; /* Ensure the image takes up the full height of its grid cell */
+    object-fit: cover; /* Ensure the image maintains its aspect ratio */
+    border-radius: 8px;
+    cursor: pointer;
+}
+    .gallery-photo:nth-child(4n+1) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+.backBtn{
+    padding: 1vw;
+}
+
+/* Lightbox container */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0); /* Initially transparent */
+    backdrop-filter: blur(0); /* Initially no blur */
+    display: flex; /* Use flexbox to center the content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease; /* Smooth transition for background and blur */
+}
+
+/* Lightbox content */
+.lightbox-content {
+    display: block;
+    max-width: 80vw; /* Set a max width to avoid overflow */
+    max-height: 80vh; /* Set a max height to avoid overflow */
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #f1f1f1;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000; /* Ensure the close button is above the lightbox */
+}
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+    }
