@@ -7,31 +7,49 @@
 <html>
 <head>
     <link rel="stylesheet" href="~/css/site.css" />
-    <link rel="stylesheet" href="~/css/contactus.css" />
-
+    <link rel="stylesheet" href="~/css/accommodation.css" />
 </head>
-<body>
+<body >
     <main>
-        @foreach (var house in Model)
-        {
-            <div class="house-summary">
-                <h2>@house.Name</h2>
-                <p>@house.Introduction</p>
-                <img src="@house.ImageUrls.FirstOrDefault()" alt="@house.Name" />
-                <a asp-action="AccommodationDetails" asp-route-id="@house.Id">View Details</a>
-            </div>
-        }
+        <img src="~/Assets/Accommodation/houseHeader.jpg" alt="Heading Image" class="responsive-heading-image" />
+        
+        <div class="gridSection">
+        <div class="gridLayout">
+                @foreach (var house in Model)
+                {
+                    <a href="@Url.Action("AccommodationDetails", "Accommodation", new { id = house.Id })">
+                        <div class="card">
+                            @if (house.ImageUrls.Any())
+                            {
+                                <img src="@Url.Content(house.ImageUrls.First())" alt="@house.Name" class="card-img">
+                            }
+                            else
+                            {
+                                <img src="~/Assets/Accommodation/default.jpg" alt="Default Image" class="card-img">
+                            }
+                            <div class="card-content">
+                                <h2 class="card-title">@house.Name</h2>
+                                <p class="card-description">@house.GlanceDesc</p>
+                                <div class="card-info">
+                                    <div class="info-item">
+                                        <img src="~/Assets/Accommodation/Icons/bedIcon.svg" alt="Bed Icon" class="info-icon">
+                                        <span class="info-text">@house.Sleeps</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <img src="~/Assets/Accommodation/Icons/bathIcon.svg" alt="Bath Icon" class="info-icon">
+                                        <span class="info-text">@house.Bath</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                }
 
+        </div>
+        </div>
     </main>
 
     <script src="~/js/site.js"></script>
     <script src="~/js/ContactButtonLogic.js"></script>
-
-
-
 </body>
-
 </html>
-
-
-

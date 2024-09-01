@@ -1,0 +1,198 @@
+﻿html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+main {
+    background-color: black;
+}
+
+
+.overall-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    flex-grow: 1;
+    height: auto;
+    width: 100vw;
+    margin-bottom: 60%;
+}
+
+.gridLayout {
+    padding: 2vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 columns of equal width */
+    gap: 2vw; /* Space between grid items */
+    justify-content: center;
+}
+
+.gridSection{
+    left: 1vw;
+    right: 1vw
+}
+.responsive-heading-image {
+    width: 100%;
+    height: 50%;
+    object-fit: contain;
+    position: relative; /* Ensure this is relative to create a stacking context */
+    z-index: 1; /* Set a lower z-index */
+}
+
+.card {
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+    .card::before {
+        content: ""; /* Required for the pseudo-element */
+        position: absolute; /* Positioned absolutely within the card */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.3s ease; /* Smooth transition for the overlay */
+        z-index: 1; /* Ensure it sits above the image but below the content */
+    }
+
+    .card:hover::before {
+        opacity: 1;
+    }
+
+    .card:hover {
+        transform: scale(1.05); /* Scale up the card */
+        z-index: 2; /* Ensure the card is above other content */
+    }
+
+        .card:hover .card-title {
+            transform: translateY(-3vw); /* Move text up */
+            transition: opacity 0.3s ease; /* Smooth transition for the overlay */
+        }
+
+        .card:hover .card-description {
+            transform: translateY(-3vw); /* Move text up */
+            transition: opacity 0.3s ease; /* Smooth transition for the overlay */
+        }
+
+.card-img {
+    width: auto;
+    height: 20vw;
+    object-fit: cover;
+    position: relative; /* Ensure it doesn't get hidden by overlay */
+    z-index: 0; /* Ensure it sits below the overlay */
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0; /* Positions the content at the bottom of the card */
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Darker gradient */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2; /* Ensure it sits above the overlay */
+}
+
+.card-info {
+    display: none; /* Initially hidden */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 3; /* Ensure it sits above other elements */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 1vw;
+    font-family: cardHeading;
+}
+
+.info-icon {
+    width: 24px; /* Adjust as needed */
+    height: 24px; /* Adjust as needed */
+    margin-right: 5px;
+}
+
+.info-text {
+    font-size: 1rem;
+}
+.card:hover .card-info {
+    display: flex; /* Show on hover */
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin: 0;
+    font-family: cardHeading;
+}
+
+.card-description {
+    font-size: 1rem;
+    margin-top: 5px;
+    font-family: cardBody;
+}
+
+.amenities {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of icons */
+    gap: 10px; /* Space between icons */
+}
+
+/* accommodatoin_Details.css */
+
+.amenities-container ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    gap: 10px; /* Space between items */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.amenities-container li {
+    display: flex;
+    align-items: center;
+}
+
+.amenity-icon {
+    margin-right: 8px; /* Space between icon and text */
+    width: 24px; /* Size of the icon */
+    height: 24px;
+}
+
+}
+@font-face {
+    font-family: cardHeading;
+    src: url('/Assets/Fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: cardBody;
+    src: url('/Assets/Fonts/Montserrat-Light.ttf') format('truetype');
+}
+@media (max-width: 1200px) {
+    .gridLayout {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 800px) {
+    .gridLayout {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+}
