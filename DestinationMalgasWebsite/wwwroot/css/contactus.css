@@ -10,9 +10,7 @@ html, body {
     flex-direction: column;
     position: relative;
     flex-grow: 1;
-    height: auto;
-    width: 100vw;
-    margin-bottom: 60%;
+    margin-bottom: 13%
 }
 
 .responsive-heading-image {
@@ -135,7 +133,7 @@ html, body {
     width: 19.3%;
     height: auto;
     left: 25%;
-    top: 33.5%;
+    top: 32.5%;
     z-index: 11;
     border-radius: 15px 0px 0px 15px;
 }
@@ -149,110 +147,99 @@ html, body {
     z-index: 11;
 }
 
-.messageHeading {
-    font-family: contactBoxHeading;
+/* General form styling */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3vw;
+    border-radius: 0.5vw;
+}
+
+/* Input fields styling */
+.form-input, .form-textarea {
     width: 100%;
-    height: auto;
-    font-size: 3.5vw;
-    color: white;
-    z-index: 10;
-    position: absolute;
-    top: 130%;
-    left: 36%;
-    white-space: nowrap;
-}
-
-.messageInput {
-    position: absolute;
-    background: #D9D9D9;
-    border-radius: 1vw;
+    height: 3vw;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0.5vw;
+    box-sizing: border-box;
+    font-size: 16px;
     font-family: contactBoxBody;
-    font-size: 1.2vw;
-    height: 5vh;
-    width: 30vw;
-    z-index: 8;
-    resize: none;
-    padding: 1% 1%; /* Adjust the vertical padding to achieve vertical centering */
-    line-height: 5vh;
     white-space: nowrap; /* Prevent text from wrapping */
     text-overflow: ellipsis; /* Display ellipsis (...) when text overflows */
     overflow: hidden; /* Hide both vertical and horizontal scrollbars */
-    margin-bottom: 2%;
-}
-
-/* Row 1 styles */
-.row1 {
-    top: 150%; /* Adjust as needed */
-}
-
-/* Row 2 styles */
-.row2 {
-    top: 165%; /* Adjust as needed */
-}
-
-/* Left positioning */
-.left {
-    left: 17%;
-}
-
-/* Right positioning */
-.right {
-    right: 17%;
-}
-
-.bigMessageInput {
-    position: absolute;
-    background: #D9D9D9;
-    border-radius: 1vw;
     font-family: contactBoxBody;
-    font-size: 1.2vw;
-    height: 30vh;
-    width: 64vw;
-    z-index: 8;
-    resize: none;
-    padding: 1% 1%; /* Adjust the vertical padding to achieve vertical centering */
-    line-height: 5vh;
-    white-space: nowrap; /* Prevent text from wrapping */
-    text-overflow: ellipsis; /* Display ellipsis (...) when text overflows */
-    overflow: hidden; /* Hide both vertical and horizontal scrollbars */
-    top: 180%;
-    left: 17%;
 }
 
+/* Textarea specific styling */
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+    /* Placeholder text styling */
+    .form-input::placeholder, .form-textarea::placeholder {
+        color: #FFFFFF;
+    }
+
+/* Submit button styling */
 .sendButton {
-    position: absolute;
-    height: auto; /* Adjusted to fit the image */
-    width: auto; /* Adjusted to fit the image */
-    left: 40%;
-    top: 230%;
+    text-align: center;
+}
+
+.submit-button {
+    background-color: #5E6845;
+    color: #222812;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 0.5vw;
+    font-size: 16px;
     cursor: pointer;
-    display: inline-block; /* Ensures the button does not affect the layout */
+    transition: background-color 0.3s ease;
+    font-family: Heading;
 }
 
-.sendButtonImage {
-    display: block; /* Ensures the image takes up space */
-    width: 70%; /* Ensure the image fills the container */
-    height: auto;
-    transition: opacity 0.3s ease; /* Smooth transition for hover and click effects */
+    .submit-button:hover {
+        background-color: #535D3D;
+        color: #2A3018;
+    }
+
+.form-label {
+    display: block;
+    font-size: 16px; /* Adjust font size as needed */
+    font-family: Heading; /* Change the font family as needed */
+    color: white; /* Change the text color as needed */
+    margin-bottom: 5px; /* Space between label and input */
 }
-
-
 
 @font-face {
-    font-family: contactBoxHeading;
+    font-family: Heading;
     src: url('/Assets/Fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Body;
+    src: url('/Assets/Fonts/Montserrat-Light.ttf') format('truetype');
 }
 
 @font-face {
     font-family: contactBoxBody;
     src: url('/Assets/Fonts/Montserrat-Regular.ttf') format('truetype');
 }
+/* Responsive design */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 15px;
+    }
 
-@font-face {
-    font-family: contactBoxAddress;
-    src: url('/Assets/Fonts/Montserrat-Medium.ttf') format('truetype');
+    .form-input, .form-textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .submit-button {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
 }
-
-
-
-

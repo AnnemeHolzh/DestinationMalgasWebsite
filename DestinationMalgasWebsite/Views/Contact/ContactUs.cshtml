@@ -11,8 +11,10 @@
 </head>
 <body style="background: black" >
   
-    <main class="overall-wrapper">
-        
+    <main>
+
+        <div class="overall-wrapper">
+
       
             <img src="~/Assets/Contact/headerImage.jpg" alt="Heading Image" class="responsive-heading-image" />
         
@@ -51,17 +53,33 @@
             <div class="messageHeading">
                 Write a Message
              </div>
+        </div>
+        <div>
+            <form method="post" asp-action="SendEmail" asp-controller="Contact" class="contact-form">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" required class="form-input" />
 
-        <form method="post" asp-action="SendEmail" asp-controller="Contact">
-            <input type="text" class="messageInput row1 left" name="name" placeholder="Full Name" required />
-            <input type="email" class="messageInput row1 right" name="email" placeholder="Email" required />
-            <input type="text" class="messageInput row2 left" name="phoneNumber" placeholder="Phone Number" />
-            <input type="text" class="messageInput row2 right" name="subject" placeholder="Subject" required />
-            <textarea class="bigMessageInput" name="message" placeholder="Message" required></textarea>
-            <div class="sendButton">
-                <button type="submit">Send</button>
-            </div>
-        </form>
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" required class="form-input" />
+
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" class="form-input" />
+
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" name="subject" required class="form-input" />
+
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" required class="form-textarea"></textarea>
+
+                <div class="sendButton">
+                    <button type="submit" class="submit-button">Send</button>
+                </div>
+            </form>
+
+        </div>
+
+
+
 
         
     </main>
