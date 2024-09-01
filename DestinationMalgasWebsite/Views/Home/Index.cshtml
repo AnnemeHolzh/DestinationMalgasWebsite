@@ -88,32 +88,24 @@
                 <img src="~/Assets/Landing/Img/visitMalgasHeader.png" alt="Visit Us Header" />
             </div>
 
-            <div class="aboutContent">
-                <div class="text-container">
-                    <div id="small-text" class="small-text">Malgas is more than just a place to stay—it's a destination filled with natural beauty and a variety of activities:</div>
-                    <div id="reason-text" class="reason-text">
-                        <h2 id="reason-h2">1. Stunning Scenery</h2>
-                        <p id="reason-body">
-                            Immerse yourself in the breathtaking landscapes that surround you. <br><br>
-                            From lush riverbanks to rolling hills, every view is a postcard moment.
-                        </p>
-                    </div>
+            <div class="visitContent">
+                <div class="visit-text">
+                    <h2 id="reasonHeading">Stunning Scenery</h2>
+                    <p id="reasonBody">Immerse yourself in the breathtaking landscapes that surround you. From lush riverbanks to rolling hills, every view is a postcard moment.</p>
                 </div>
-                <img id="reason-image" src="~/Assets/Landing/Img/VisitCarousel/reasons1.png" alt="About Us Image" />
+                <img id="reasonImage" src="~/Assets/Landing/Img/VisitCarousel/reasons1.png" alt="About Us Image" />
             </div>
 
-            <button id="left-button-section3" class="circle-button left-button" onclick="changeReasonSlide('prev')">
-                <img src="~/Assets/Landing/Buttons/leftCircleButton.svg" alt="Left Button">
-            </button>
+            <div class="button-container">
+                <button id="left-button-section3" class="circle-button left-button" onclick="changeReasonSlide('prev')">
+                    <img src="~/Assets/Landing/Buttons/leftCircleButton.svg" alt="Left Button">
+                </button>
 
-            <button id="right-button-section3" class="circle-button right-button" onclick="changeReasonSlide('next')">
-                <img src="~/Assets/Landing/Buttons/rightCircleButton.svg" alt="Right Button">
-            </button>
+                <button id="right-button-section" class="circle-button right-button" onclick="changeReasonSlide('next')">
+                    <img src="~/Assets/Landing/Buttons/rightCircleButton.svg" alt="Right Button">
+                </button>
+            </div>
         </section>
-
-
-
-
 
         
     </main>
@@ -126,6 +118,73 @@
     </script>
 
     <script src="~/js/site.js"></script>
+    <script src="~/js/LandingSlideshowLogic.js"> </script>
+
+    <script>
+    // Ensure that your DOMContentLoaded event listeners are not nested, 
+    // as it may lead to issues with event handling.
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Section 3 Slideshow
+        const reasons = [
+            {
+                h2: "1. Stunning Scenery",
+                body: "Explore numerous hiking trails that cater to all levels of fitness. <br><br>From lush riverbanks to rolling hills, every view is a postcard moment.",
+                image: "/Assets/Landing/Img/VisitCarousel/reasons1.png"
+            },
+            {
+                h2: "2. Hiking Trails",
+                body: "Discover the historical landmarks and learn about the cultural heritage of Malgas. <br><br>Discover the diverse flora and fauna, and perhaps spot some local wildlife.",
+                image: "/Assets/Landing/Img/VisitCarousel/reasons2.png"
+            },
+            {
+                h2: "3. Whale Watching",
+                body: "Visit during whale season to witness the magnificent spectacle of these gentle giants. <br><br>Infanta and Witsand are renowned for their whale watching opportunities.",
+                image: "/Assets/Landing/Img/VisitCarousel/reason3.png"
+            },
+            {
+                h2: "4. Fishing",
+                body: "The Breede River is teeming with fish like Cob and Garrick. <br><br>Whether you're a seasoned angler or a beginner, you'll find great spots for fishing.",
+                image: "/Assets/Landing/Img/VisitCarousel/reason4.png"
+            },
+            {
+                h2: "5. Bird Watching",
+                body: "With a rich variety of bird species, including fish eagles and kingfishers, Malgas is a haven for bird watchers.",
+                image: "/Assets/Landing/Img/VisitCarousel/reason5.png"
+            },
+            {
+                h2: "6. Local Attractions",
+                body: "Explore historical monuments, visit local pubs and restaurants, and tour nearby wineries.<br><br>There's always something new to discover.",
+                image: "/Assets/Landing/Img/VisitCarousel/reason6.png"
+            }
+        ];
+
+        let currentReason = 0;
+        const reasonH2Element = document.getElementById('reasonHeading');
+        const reasonBodyElement = document.getElementById('reasonBody');
+        const reasonImageElement = document.getElementById('reasonImage');
+
+        function changeReasonSlide(direction) {
+            // Applying similar logic to change slides
+            if (direction === 'next') {
+                currentReason = (currentReason + 1) % reasons.length;
+            } else if (direction === 'prev') {
+                currentReason = (currentReason - 1 + reasons.length) % reasons.length;
+            }
+
+            reasonH2Element.innerHTML = reasons[currentReason].h2;
+            reasonBodyElement.innerHTML = reasons[currentReason].body;
+            reasonImageElement.src = reasons[currentReason].image;
+        }
+
+        // Attach event listeners to buttons
+        document.querySelector('.section3 .left-button').addEventListener('click', () => changeReasonSlide('prev'));
+        document.querySelector('.section3 .right-button').addEventListener('click', () => changeReasonSlide('next'));
+    });
+</script>
+
+
+
 
 </body>
 </html>
