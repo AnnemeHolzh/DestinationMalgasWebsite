@@ -8,7 +8,7 @@
         {
             private string senderEmail = "destinationmalgasdev1@gmail.com";
             private string senderPassword = "ruputpehevakhfmm";
-            private string recieverEmail = "twan@destinationmalgas.co.za";
+            private string recieverEmail = "holzhausenantwanette@gmail.com";
 
 
             public string subject { get; set; } = "";
